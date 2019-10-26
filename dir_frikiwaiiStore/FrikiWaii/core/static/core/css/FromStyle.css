@@ -1,0 +1,222 @@
+/* MENU DE REGISTRO */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    padding-top: 80px; 
+    display: inline-block;  
+    width: 100%;
+    height: 100%;
+}
+.Marco{
+    display: inline-block;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: center;
+    justify-self: center;
+    max-width: 20%;
+    background: white;
+}
+.ContForm{
+    background: white;
+    align-self: auto;
+}
+.IngresarCuenta{
+    background: grey;
+}
+.Contenedor_General{
+    padding-bottom: 3%;
+    margin: auto;
+    justify-content: space-between;
+    align-self: center;
+    padding-right: 15px;
+}
+/* Registro */
+.ContenedorFormulario{
+    display:inline-block;
+    padding-top: 15px;
+    background-color:  rgb(232, 191, 248);
+    text-align: center;
+    border: 15px;
+    border-radius: 15px;
+    margin-right: 20%;
+    padding-bottom: 2%;
+    margin-left: 5%;
+    /* padding-right: 20%; */
+}
+.ContenedorFormulario label{
+ padding-left: 40px;
+ padding-right: 40px;
+}
+form{
+    padding-left: 5px; 
+    text-align: center;
+    display: block;
+    
+}
+form label{
+    font-family: 'Bitter', serif;
+    font-size: 20px;
+    padding-right: 0%;
+    text-align: left;
+}
+form .txt{
+    align-content: right;
+     
+}
+/* Login */
+.ContenedorLogin{
+
+    display:inline-block;
+    padding-top: 2%;
+    padding-right: 8%;
+    background-color:  rgb(232, 191, 248);
+    text-align: center;
+    border: 15px;
+    border-radius: 15px;
+    margin-right: 10%;
+    padding-bottom: 2%;
+    margin-left: 50%;
+    margin: auto;
+    
+    
+    
+    
+}
+/* labels y txt */
+.ContenedorLogin label{
+    position: initial;
+    padding-left: 120px;
+    margin-bottom: 10%;
+    
+}
+.ContenedorLogin form .txt{
+    margin-left: 30%;
+}
+.ContenedorLogin form #BottonLogin{
+    margin-left: 80%;
+}
+/* lineas de separacion */
+.Linea{
+    border-bottom: solid 1px  rgb(196, 108, 231);
+    widows: 50%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.Linea2{
+    justify-content: center;
+    border-bottom: solid 1px  rgb(196, 108, 231);
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+/* Login Facebook y gmail */
+.ContenedorLogin a{
+    text-align: center;
+    max-width: 30%;
+    padding-left: 7%;
+}
+/* cabecera */
+/* Cabecera */
+header{
+    width: 100%;
+    height: 50px;
+    background: rgb(253, 250, 224);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* Contenedor Menú */
+.contenedor{
+    /* 98% para q no se vea feo */
+    width: 98%;
+    margin: auto;
+
+}
+/* menú permanece a la izquierda cuando se despliega en otros dispositivos */
+h1{
+    float: left;
+}
+header .contenedor{
+    /* para limpiar los float */
+    display: table;
+}
+footer .contenedor{
+  
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: left;
+    padding-bottom: 25px;
+    padding-top: 15px;
+    margin-top: 5%;
+}
+/* Copyright */
+.copy{
+    font-size: 15px;
+    color :white;
+}
+.sociales{
+    width: 100%;
+    text-align: left;
+    font-size: 28px;
+}
+.sociales a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    max-width: 80%;;
+}
+/* --------------------------Menú----------------------------- */
+#barra-menu{
+    display: none;
+}
+header label{
+    float: left;
+    font-size: 28px;
+    margin: 6px 0;
+    /* manito  */
+    cursor: pointer;
+
+
+}
+/* inicio, contactos, mapa del sitio */
+.menu{
+    position: absolute;
+    color: white;
+    top: 50px;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background: rgb(49, 32, 56,0.9);
+    transition: all 0.5s;
+    /* se esconde en su totalidad la barra vertical */
+    transform: translateX(-100%);
+}
+/* inicio, contactos, mapa del sitio texto*/
+.menu a{
+    display: block;
+    color:white;
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+
+}
+.menu a:hover{
+    background: rgb(105, 104, 104, 0.3);
+}
+/* cuando se hace click (chek)en el icono selecciona al menú*/
+#barra-menu:checked ~ .menu{
+    transform: translateX(0%);
+}
+
+
+

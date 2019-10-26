@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: pink;
+}
+#img{
+    width: 100%;
+    border-radius: 6%;
+    max-width: 260px;
+    max-height: 260px;
+}
+#Contenedor{
+    padding-top: 10%;
+    margin: auto;
+}
+#contImg{
+    margin: auto;
+    padding-top: 15%;
+    padding-bottom: 8%;
+}
+.ContenedorTabla{
+    padding-top: 1%;
+}
+#TablaDescr
+{
+    background: 0 rgb(247, 203, 174);
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+}
+/* HEADER */
+
+header{
+    width: 100%;
+    height: 70px;
+    background: rgb(253, 250, 224);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.menu
+{
+    position: abosulte;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 15px; 
+}
+

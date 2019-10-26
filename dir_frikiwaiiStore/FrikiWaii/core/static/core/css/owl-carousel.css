@@ -1,0 +1,53 @@
+.owl-prev{
+    left: -30px;;
+}
+.owl-next{
+    right: -30px;
+}
+.owl-prev{
+    position: absolute;
+    top: 30%;
+}
+
+.owl-next{
+    position: absolute;
+    top: 30%;
+}
+
+.owl-prev span, .owl-next span{
+    font-size: 55px;
+    color: #787878;
+    text-shadow: 1px 1px 5px rgb(12, 12, 12);
+}
+
+.owl-prev span, owl-next span {
+    font-size: 55px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 5px rgb(12, 12, 12);
+}
+
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+    background-color:  #3f3d3d77;
+    
+}
+
+.owl-prev{ left:10px;}
+        .owl-next{right: 10px;}
+        .owl-prev, .owl-next{
+            position: absolute;
+            margin-top: auto;
+            margin-bottom: auto
+            
+        }
+        .owl-prev:hover, .owl-prev:active, .owl-prev:focus, .owl-next:hover, .owl-next:active,
+        .owl-next:focus {outline:0;}
+
+
+
+        .owl-next span{
+            color: rgb(255, 255, 255);
+        }
+
+        .owl-theme .owl-nav [class*"owl-"]:hover {background-color:transparent;}
+        

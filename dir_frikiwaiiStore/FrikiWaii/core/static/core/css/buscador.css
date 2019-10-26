@@ -1,0 +1,99 @@
+
+/* -------------------------- */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.header-top{
+	width: 100%;
+	background:rgb(253, 250, 224);
+}
+
+.navegacion{
+	width: 90%;
+    max-width: 1000px;
+    height: 43px;
+	margin: auto;
+	padding:12px 0;
+}
+
+input[type="search"]{
+	padding: 15px;
+	padding-right: 35px;
+    border: none;
+    height: 10px;
+    margin-bottom: 200px;
+    border: 0.1em solid  rgb(246, 134, 190);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.search{
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	background: white;
+	padding:0 10px;
+	padding-bottom: 5px;
+	max-height: 85%;
+	overflow-x: hidden;
+	display: none;
+}
+
+.search-table{
+	width: 100%;
+}
+
+tbody tr td{
+	width: 100%;
+}
+
+tbody tr td a{
+	text-decoration: none;
+	font-size: 18px;
+	color: #737373;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 20px 0;
+	padding-left: 20px;
+	border: 2px solid #fff;
+}
+
+.dataTables_empty{
+    background: rgb(251, 193, 193);
+}
+
+tbody tr td a:hover{
+	border: 2px solid #378FD9;
+}
+
+.search::-webkit-scrollbar{ 
+	background:rgba(0,0,0,0);  
+}
+
+.search::-webkit-scrollbar-button{
+ 	background:rgb(0, 0, 0);  
+}
+
+.search::-webkit-scrollbar-thumb{ 
+	background:rgb(0, 0, 0); 
+}
+
+.dataTables_length,
+.dataTables_filter,
+.dataTables_info,
+.dataTables_paginate {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
