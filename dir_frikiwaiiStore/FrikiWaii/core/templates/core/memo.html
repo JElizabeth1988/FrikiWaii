@@ -1,3 +1,171 @@
 {% extends "core/base.html" %} {% load static %} {% block contenido %}
 
+<!-- Contenido ------------------------------->
+
+<!-- Para volver inicio -->
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0"><a href="{% url 'home' %}" id="inicio">Inicio</a> <span class="mx-2 mb-0">/</span>
+                <strong class="text-black" id="nombre">Memo Gato</strong></div>
+        </div>
+    </div>
+</div>
+<!------------------------>
+<br><br>
+
+
+<!-- Información Producto -->
+<div class="col">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'core/img/Productos/Papeleria (17).jpg' %}" alt="Producto" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-black">Memo Gato</h3>
+                <p>Categoria : Papelería <br>
+                    Disponibilidad : En Stock</p>
+                <p class="mb-4" id="descripcion">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem
+                    perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis
+                    perspiciatis illum hic magni iste, velit aperiam quis.</p>
+                <p><strong class="text h4 bg-rosa">$4.990 CLP</strong></p>
+
+                <!-- Opciones tamaños ------------------------------------>
+                <div class="mb-1 d-flex">
+                    <label for="option-sm" class="d-flex mr-3 mb-3">
+                        <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
+                                id="option-sm" name="shop-sizes"></span> <span
+                            class="d-inline-block text-black">S</span>
+                    </label>
+                    <label for="option-md" class="d-flex mr-3 mb-3">
+                        <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
+                                id="option-md" name="shop-sizes"></span> <span
+                            class="d-inline-block text-black">M</span>
+                    </label>
+                    <label for="option-lg" class="d-flex mr-3 mb-3">
+                        <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
+                                id="option-lg" name="shop-sizes"></span> <span
+                            class="d-inline-block text-black">L</span>
+                    </label>
+                    <label for="option-xl" class="d-flex mr-3 mb-3">
+                        <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
+                                id="option-xl" name="shop-sizes"></span> <span
+                            class="d-inline-block text-black">XL</span>
+                    </label>
+                </div>
+
+                <!-- Botones Cantidad--------------------------->
+                <div class="mb-5">
+                    <div class="input-group mb-3" style="max-width: 120px;">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline js-btn-minus" type="button">&minus;</button>
+                        </div>
+                        <input type="text" class="form-control text-center" value="1" placeholder=""
+                            aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline js-btn-plus" type="button">&plus;</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Agregar al carro----------------------->
+                <p><a href="{% url 'carro' %}" class="buy-now btn btn-sm">Agregar al Carro</a></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Agregar Review -->
+<br>
+<br>
+<br>
+<div class="col">
+    <div class="container">
+        <div class="row">
+            <div class="col md-6 aa-product-review-area">
+                <h4>2 Reseñas para Memo Gato</h4>
+                <ul class="aa-review-nav">
+                    <li>
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="{% static 'core/img/Comunidad/girlrw.jpg' %}" alt="girl image">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"><strong>María Plaza</strong> - <span>Octubre 14, 2019</span>
+                                </h4>
+                                <div class="aa-product-rating">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="{% static 'core/img/Comunidad/girlrw.jpg' %}" alt="girl image">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"><strong>Juan Pérez</strong> - <span>Septiembre 5, 2018</span>
+                                </h4>
+                                <div class="aa-product-rating">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <br>
+                <br>
+                <h4>Agrega una Reseña</h4>
+                <div class="aa-your-rating">
+                    <p>Tu puntuación</p>
+                    <div class="icon mr-4 align-self-start" id="rating">
+                        <span class="icon-star-o"></span>
+                        <span class="icon-star-o"></span>
+                        <span class="icon-star-o"></span>
+                        <span class="icon-star-o"></span>
+                        <span class="icon-star-o"></span>
+                    </div>
+                </div>
+                <!-- review form -->
+                <form action="" class="aa-review-form">
+                    <div class="form-group">
+                        <label for="message">Tu Reseña</label>
+                        <textarea class="form-control" rows="3" id="message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+                    </div>
+
+                    <button type="submit" class="btn btn-default aa-review-submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin info Producto---------------- -->
 {% endblock contenido %}
