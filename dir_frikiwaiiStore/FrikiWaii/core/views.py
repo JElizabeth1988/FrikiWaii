@@ -4,6 +4,9 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'core/home.html')
 
+def registro(request):
+    return render(request, 'core/registro.html')
+
 def alien(request):
     return render(request, 'core/alien.html')
 

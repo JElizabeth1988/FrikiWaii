@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import home, alien, audifonos, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera
+from .views import home, registro, alien, audifonos, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera
 
 urlpatterns = [
     path('', home, name="home"),
+    path('registro/', registro, name="registro"),
     path('Alien/', alien, name="alien"),
     path('Audifonos/', audifonos, name="audifonos"),
     path('Mascara-bunny/', bunny, name="bunny"),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('pokemochila/', pokemochila, name="pokemochila"),
     path('sacapuntas/', sacapuntas, name="sacapuntas"),
     path('sudadera-avengers/', sudadera, name="sudadera"), 
+    
 ]

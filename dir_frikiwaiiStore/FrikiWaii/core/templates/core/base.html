@@ -68,10 +68,11 @@
                     <div class="free-shipping-wrapper">
                         <div class="free-shipping">
                             <!-- poner referencia una vez q se cree la página -->
-                            <a href="envios.html">Envíos gratis a CL! <img src="{% static 'core/img/Banderas/cl.png' %}"
+                            <a>Envíos gratis a CL! <img src="{% static 'core/img/Banderas/cl.png' %}"
                                     alt="Bandera CL"></a>
-                            <a href="#">| Idioma |</a>
-                            <a href="#"> USD |</a>
+                            <a href="#"></a> |USD |</a>
+                            <a href="{% url 'registro' %}">Registro</a>
+
                         </div>
                     </div>
                 </div>
@@ -81,137 +82,140 @@
     <!------------------------------>
 
     <div class="container-fluid top fondo justify-content-between ">
-            <div class="row">
-                <div class="logo notranslate mr-auto" href="{% url 'home' %}" title="FrikiWaii - Inicio"
-                    style="padding-left: 80px;margin-top: 13px;">
-                    <img src="{% static 'core/img/doni.png' %}" width="130" alt="logo-Michidoni">
-                </div>
-    
-                <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mt-5 mr-4">
-                    <div class="input-group md-form form-sm form-2 pl-0">
-                        <input class="form-control my-0 py-1" type="text" placeholder="¿Qué estás Buscando?"
-                            aria-label="Buscar">
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-white"
-                                    aria-hidden="true"></i></span>
-                        </div>
+        <div class="row">
+            <div class="logo notranslate mr-auto" href="{% url 'home' %}" title="FrikiWaii - Inicio"
+                style="padding-left: 80px;margin-top: 13px;">
+                <img src="{% static 'core/img/doni.png' %}" width="130" alt="logo-Michidoni">
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mt-5 mr-4">
+                <div class="input-group md-form form-sm form-2 pl-0">
+                    <input class="form-control my-0 py-1" type="text" placeholder="¿Qué estás Buscando?"
+                        aria-label="Buscar">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-white"
+                                aria-hidden="true"></i></span>
                     </div>
                 </div>
             </div>
         </div>
-        <!--Fin: div class="frk-container top fondo" -->
+    </div>
+    <!--Fin: div class="frk-container top fondo" -->
 
-        <!--------------------------------Navegador - Menú --------------------------------------------------->
+    <!--------------------------------Navegador - Menú --------------------------------------------------->
     <!-- navbar-expan-sm: se expande en ciertas dimensiones -->
     <nav class="navbar navbar-expand-md bg-nuevo skip-content sticky-top ">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <!-- contenido colapsable "toggler"-->
-                    <!-- data-toggles: colapsable; se ajusta cuando el contenido se colapse para su visualización -->
-                    <button class="navbar-toggler navbar-dark navbar-toggler-left" type="button" data-toggle="collapse"
-                        data-target="#menuColapsable">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="menuColapsable">
-                    <!-- listas desplegables -->
-                    <ul class="navbar-nav  mr-auto">
-                        <li class="nav-item active">
-                            <!-- poner referencias -->
-                            <a class="nav-link " href="{% url 'desc_outfits' %}">✰Outfits✰</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="{% url 'desc_bags' %}">✰Bags✰</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="{% url 'desc_papeleria' %}">✰Papelería✰</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="{% url 'desc_accesorios' %}">✰Accesorios✰</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="{% url 'desc_phonecase' %}">✰Phone Case✰</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="{% url 'desc_gamerstyle' %}">✰Gamer Style✰</a>
-                        </li>
-    
-                    </ul>
-                    <ul class="nav navbar-nav ">
-                        <li class="nav-item">
-                            <a href="#"><span class=" nav-link fas fa-sign-in-alt"></span> Login</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class=" nav-link "></span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#"><span class=" nav-link 	fas fa-shopping-cart"></span> Carrito</a>
-                        </li>
-                    </ul>
-    
-                </div>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- contenido colapsable "toggler"-->
+                <!-- data-toggles: colapsable; se ajusta cuando el contenido se colapse para su visualización -->
+                <button class="navbar-toggler navbar-dark navbar-toggler-left" type="button" data-toggle="collapse"
+                    data-target="#menuColapsable">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
-    
-        </nav>
-    
-        <!-- Fin Navegación -->
-    
-        <!-- Mensaje -->    
-        <div class="header-primary-container" style="background-color:#d6f0fe; color:#333333; text-align: center; line-height: 40px;">
-            <div class="inner-container">
-                <div class="left-column">
-                    <div class="item item-left block_header_top_left">
-                        <div class="free-shipping-wrapper">
-                            <div class="free-shipping">
-                                <a> &#x1F383; Descuentos con código: PUMPKIN &#x1F383 </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>    
+            <div class="collapse navbar-collapse" id="menuColapsable">
+                <!-- listas desplegables -->
+                <ul class="navbar-nav  mr-auto">
+                    <li class="nav-item active">
+                        <!-- poner referencias -->
+                        <a class="nav-link " href="{% url 'desc_outfits' %}">✰Outfits✰</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'desc_bags' %}">✰Bags✰</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'desc_papeleria' %}">✰Papelería✰</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'desc_accesorios' %}">✰Accesorios✰</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'desc_phonecase' %}">✰Phone Case✰</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'desc_gamerstyle' %}">✰Gamer Style✰</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav ">
+                    <li class="nav-item">
+                        <a href="#"><span class=" nav-link fas fa-sign-in-alt"></span> Login</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class=" nav-link "></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><span class=" nav-link 	fas fa-shopping-cart"></span> Carrito</a>
+                    </li>
+                </ul>
+
             </div>
         </div>
 
-        {% block contenido %}
-    
-        {% endblock contenido %}
+    </nav>
 
-         <!--Footer ------------------------------------------------------------------>
+    <!-- Fin Navegación -->
+
+    <!-- Mensaje -->
+    <div class="header-primary-container"
+        style="background-color:#d6f0fe; color:#333333; text-align: center; line-height: 40px;">
+        <div class="inner-container">
+            <div class="left-column">
+                <div class="item item-left block_header_top_left">
+                    <div class="free-shipping-wrapper">
+                        <div class="free-shipping">
+                            <a> 💖 Descuentos con compras mayores a $10.000 💖</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block contenido %}
+
+    {% endblock contenido %}
+
+    <!--Footer ------------------------------------------------------------------>
 
     <!-- Footer -->
     <footer class="page-footer-fluid bg-nuevo">
-            <!-- padding a los 4 bordes -->
-            <div class="footer-copyright text-center mt-5">
-                <!-- CopyRight -->
-                <p class="copy text-white pt-3"> &copy;Copyright 2019 FrikiWaii, All Rights Reserved.</p>
-            </div>
-            <!-- Iconos redes sociales -->
-            <div class="social-links text-center ">
-                <a class=" nav-link fab fa-facebook ib ib-hover ic ic-lg mb-3 " href="https://www.facebook.com/Frikiwaii-Store-113959099987535/" target="_blank"
-                    title="Siguenos en Facebook"> </a>
-                <a class="nav-link fab fa-twitter-square   ib ib-hover ic ic-lg" href="https://twitter.com/frikiwaii" target="_blank"
-                    title="Siguenos en Twitter"></a>
-                <a class="nav-link fab fa-whatsapp  ib ib-hover ic ic-lg" href="http://api.whatsapp.com/send?phone=[+569][32929309]&text=Hola, quisiera información de sus productos." 
-                    title="Contactanos por Whatsapp"> </a>
-                <a class="nav-link fab fa-instagram  ib ib-hover ic ic-lg" href="https://instagram.com/frikiwaii_store.cl?igshid=1czra53b7pnko" 
-                    title="Siguenos en Instagram"></a>
-                <a class="nav-link fab fa-google-plus  ib ib-hover ic ic-lg" href="#"
-                    title="Contactanos en Google Plus"></a>
-                <a class="nav-link fab fa-pinterest  ib ib-hover ic ic-lg" href="#" title="Siguenos en Pinterest"></a>
-            </div>
-    
-            </div>
+        <!-- padding a los 4 bordes -->
+        <div class="footer-copyright text-center mt-5">
+            <!-- CopyRight -->
+            <p class="copy text-white pt-3"> &copy;Copyright 2019 FrikiWaii, All Rights Reserved.</p>
+        </div>
+        <!-- Iconos redes sociales -->
+        <div class="social-links text-center ">
+            <a class=" nav-link fab fa-facebook ib ib-hover ic ic-lg mb-3 "
+                href="https://www.facebook.com/Frikiwaii-Store-113959099987535/" target="_blank"
+                title="Siguenos en Facebook"> </a>
+            <a class="nav-link fab fa-twitter-square   ib ib-hover ic ic-lg" href="https://twitter.com/frikiwaii"
+                target="_blank" title="Siguenos en Twitter"></a>
+            <a class="nav-link fab fa-whatsapp  ib ib-hover ic ic-lg"
+                href="http://api.whatsapp.com/send?phone=[+569][32929309]&text=Hola, quisiera información de sus productos."
+                title="Contactanos por Whatsapp"> </a>
+            <a class="nav-link fab fa-instagram  ib ib-hover ic ic-lg"
+                href="https://instagram.com/frikiwaii_store.cl?igshid=1czra53b7pnko" title="Siguenos en Instagram"></a>
+            <a class="nav-link fab fa-google-plus  ib ib-hover ic ic-lg" href="#"
+                title="Contactanos en Google Plus"></a>
+            <a class="nav-link fab fa-pinterest  ib ib-hover ic ic-lg" href="#" title="Siguenos en Pinterest"></a>
+        </div>
+
+        </div>
     </footer>
-    
-    
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="{% static 'core/js/jquery-3.3.1.slim.min.js' %} "></script>
-        <script src="{% static 'core/js/popper.min.js' %} "></script>
-        <script src="{% static 'core/js/bootstrap.min.js' %} "></script>
-    
-        <!-- btn to top  -->
-        <script src="{% static 'core/js/scroll.top.js' %}"></script>
-    
-         <!-- Códigos Carrusel productos -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'core/js/jquery-3.3.1.slim.min.js' %} "></script>
+    <script src="{% static 'core/js/popper.min.js' %} "></script>
+    <script src="{% static 'core/js/bootstrap.min.js' %} "></script>
+
+    <!-- btn to top  -->
+    <script src="{% static 'core/js/scroll.top.js' %}"></script>
+
+    <!-- Códigos Carrusel productos -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -267,6 +271,7 @@
 
     </script>
 
-    
+
 </body>
+
 </html>
