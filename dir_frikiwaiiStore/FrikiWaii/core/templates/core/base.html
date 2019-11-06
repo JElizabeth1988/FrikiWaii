@@ -81,12 +81,13 @@
     </div>
     <!------------------------------>
 
-    <div class="container-fluid top fondo justify-content-between ">
+
+    <!-- Header que contiene el logo y buscador -->
+    <div class="frk-container top fondo ">
         <div class="row">
-            <div class="logo notranslate mr-auto" href="{% url 'home' %}" title="FrikiWaii - Inicio"
-                style="padding-left: 80px;margin-top: 13px;">
+            <a class="logo notranslate mr-auto" href="{% url 'home' %}" title="FrikiWaii - Inicio">
                 <img src="{% static 'core/img/doni.png' %}" width="130" alt="logo-Michidoni">
-            </div>
+            </a>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mt-5 mr-4">
                 <div class="input-group md-form form-sm form-2 pl-0">
@@ -99,6 +100,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
     <!--Fin: div class="frk-container top fondo" -->
 
