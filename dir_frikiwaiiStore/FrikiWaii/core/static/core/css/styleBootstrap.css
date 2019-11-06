@@ -7,7 +7,7 @@
 
 .bg-nuevo{
       /* background: rgb(105, 207, 238); */
-     background:rgb(255, 130, 193);
+     background: rgb(255, 130, 193);
     /* background:rgb(200, 158, 235); */
 }
 
@@ -324,6 +324,7 @@ img {
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
+  text-align: center;
   -webkit-font-smoothing: antialiased;
 }
 #back-to-top-btn {
@@ -331,11 +332,11 @@ img {
     color: #fff;
     background-color: rgb(200, 158, 235);
     border: 1px solid rgb(200, 158, 235);
-    width: 50px;
+    width: 40px;
     z-index: 999;
     display: none;
-    font-size: 23px;
-    height: 50px;
+    font-size: 20px;
+    height: 40px;
     line-height: 45px;
     position: fixed;
     right: 20px;
