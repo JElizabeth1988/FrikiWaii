@@ -7,6 +7,12 @@ def home(request):
 def registro(request):
     return render(request, 'core/registro.html')
 
+def modificar(request):
+    return render(request, 'core/modificar.html')
+
+def listado(request):
+    return render(request, 'core/listado.html')  
+
 def alien(request):
     return render(request, 'core/alien.html')
 

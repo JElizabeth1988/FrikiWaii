@@ -1,0 +1,51 @@
+{% extends "core/base.html" %} {% load static %} {% block contenido %}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <br>
+            <br>
+            <img src="{% static 'core/img/box.png' %}" alt="box">
+        </div>
+    </div>
+    <!-- formulario -->
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="row mt-4 ">
+
+            <div class="col-12">
+                <h4>Modificar Productos</h4>
+            </div>
+            <div class="col-8 py-2">
+                <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Ingrese Nombre">
+            </div>
+            <div class="col-8 ">
+                <div class="form-group">
+                    <label for="cboMarca">Seleccione una categoría de la lista</label>
+                    <select class="form-control" id="cboCategoría" name="cboCategoría">
+                        <option value="0">Seleccione</option>
+                        <!-- {% for x in marcas %} 
+                        <option value="{{x.id}}">{{ x.nombre}}</option>
+                        {% endfor %}-->
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-8 py-2">
+                <input type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" placeholder="Ingrese Descripción">
+            </div>
+            <div class="col-8 py-2">
+                <input type="text" class="form-control" id="txtPrecio" name="txtPrecio" placeholder="Ingrese Precio">
+            </div>
+            <div class="col-8 py-2">
+                <input type="submit" class="btn btn-dark" id="btnModificar" name="btnModificar" value="Modificar">
+            </div>
+
+        </div>
+    </form>
+    {% if messages %} {% for x in messages %}
+    <div>{{x}}</div>
+    {% endfor %} {% endif%}
+</div>
+{% endblock contenido %}
