@@ -1,641 +1,660 @@
 {% extends "core/base.html" %} {% load static %} {% block contenido %}
 
 <!-- Slide de fotos -->
-    <!-- data-ride: la forma que se hace la animacion tipo carousel hacia al lado -->
-    <!-- data-interval: intervalo entre cada foto (1000=1 segundo) -->
-    <div id="Carruselin" class="carousel slide" data-ride="carousel" data-interval="4000">
-            <!--carousel-indicator: son los pequeños puntos en la parte inferior de cada diapositiva (que indica cuántas 
+<!-- data-ride: la forma que se hace la animacion tipo carousel hacia al lado -->
+<!-- data-interval: intervalo entre cada foto (1000=1 segundo) -->
+<div id="Carruselin" class="carousel slide" data-ride="carousel" data-interval="4000">
+    <!--carousel-indicator: son los pequeños puntos en la parte inferior de cada diapositiva (que indica cuántas 
                 diapositivas hay en el carrusel y qué diapositiva está viendo el usuario actualmente) -->
-            <ul class="carousel-indicators">
-                <li data-target="#Carruselin" data-slide-to="0" class="active"></li>
-                <li data-target="#Carruselin" data-slide-to="1"></li>
-                <li data-target="#Carruselin" data-slide-to="2"></li>
-            </ul>
-    
-            <div class="carousel-inner">
-                <!-- Primera imagen del carrusel activa -->
-                <div class="carousel-item active">
-                    <!-- propiedad clase w-100 se ajusta 100% -->
-                    <img class=" d-md-block w-100 " src="{% static 'core/img/slider/Slide1.png' %}" alt="0">
-                </div>
-                <div class="carousel-item ">
-                    <!-- propiedad clase w-100 se ajusta 100% -->
-                    <img class="w-100 d-md-block" src="{% static 'core/img/slider/Slide2.png' %}" alt="1">
-                </div>
-                <div class="carousel-item ">
-                    <!-- propiedad clase w-100 se ajusta 100% -->
-                    <img class="w-100 d-md-block" src="{% static 'core/img/slider/Slider 2.png' %}" alt="2">
-                </div>
-    
-            </div>
-    
-            <!-- Controles izquierda y derecha -->
-            <a class="carousel-control-prev" href="#Carruselin" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#Carruselin" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
+    <ul class="carousel-indicators">
+        <li data-target="#Carruselin" data-slide-to="0" class="active"></li>
+        <li data-target="#Carruselin" data-slide-to="1"></li>
+        <li data-target="#Carruselin" data-slide-to="2"></li>
+    </ul>
+
+    <div class="carousel-inner">
+        <!-- Primera imagen del carrusel activa -->
+        <div class="carousel-item active">
+            <!-- propiedad clase w-100 se ajusta 100% -->
+            <img class=" d-md-block w-100 " src="{% static 'core/img/slider/Slide1.png' %}" alt="0">
         </div>
-        <!---------------------------------------------------------------
+        <div class="carousel-item ">
+            <!-- propiedad clase w-100 se ajusta 100% -->
+            <img class="w-100 d-md-block" src="{% static 'core/img/slider/Slide2.png' %}" alt="1">
+        </div>
+        <div class="carousel-item ">
+            <!-- propiedad clase w-100 se ajusta 100% -->
+            <img class="w-100 d-md-block" src="{% static 'core/img/slider/Slider 2.png' %}" alt="2">
+        </div>
+
+    </div>
+
+    <!-- Controles izquierda y derecha -->
+    <a class="carousel-control-prev" href="#Carruselin" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#Carruselin" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+<!---------------------------------------------------------------
         -->
-        <br>
-        <br>
-        <br>
-    
-        <!-- Carrusel Productos Nuevos-->
-        <h3 class="text text-center" id="nuestros">Nuevos Productos</h3>
-    
-    
-        <div class="container mt-5 mb-5">
+<br>
+<br>
+<br>
+
+<!-- Carrusel Productos Nuevos-->
+<h3 class="text text-center" id="nuestros">Nuevos Productos</h3>
+
+
+<div class="container mt-5 mb-5">
+    <div class="card">
+
+    </div>
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <!---Etiqueta de nueno------------>
+            <span class="badge badge--sale" id="nuevo">
+                <span class="badge__text">nuevo</span>
+            </span>
+            <!---Producto------------------------>
             <div class="card">
-    
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/navidad/jack4.jpg' %}" alt="a">
+                    <a href="{% url 'joker' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="card-body text-center">
+                    <h6 class="card-title ">El Extraño Mundo de Jack
+                        <br> Ornamento Navidad</h6>
+                    $3.990 CLP
+                </div>
+
             </div>
-            <div class="owl-carousel owl-theme">
-                <div class="item">
-                    <!---Etiqueta de nueno------------>
-                    <span class="badge badge--sale" id="nuevo">
-                        <span class="badge__text">nuevo</span>
-                    </span>
-                    <!---Producto------------------------>
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Halloween (1).jpg' %}" alt="a">
-                            <a href="{% url 'joker' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-    
-                        <div class="card-body">
-                            <h6 class="card-title">Máscara Joker</h6>
-                            $6.990 CLP
-                        </div>
-    
-                    </div>
-    
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="nuevo">
-                        <span class="badge__text">nuevo</span>
-                    </span>
-                    <!--Producto-------------->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Halloween (2).jpg' %}" alt="b">
-                            
-                            <a href="{% url 'penny' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Máscara Pennywise</h6>
-                            $7.900 CLP
-                        </div>
-    
-    
-                    </div>
-    
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="nuevo">
-                        <span class="badge__text">nuevo</span>
-                    </span>
-                    <!-- Producto -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Halloween (3).jpg' %}" alt="c">
-                            
-                            <a href="{% url 'momo' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Máscara Momo</h6>
-                            $7.500 CLP
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="nuevo">
-                        <span class="badge__text">nuevo</span>
-                    </span>
-                    <!-- Producto  -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Halloween (4).jpg' %}" alt="d">
-                            
-                            <a href="{% url 'muerto' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Pikachu Disfraz</h6>
-                            $11.990 CLP
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="nuevo">
-                        <span class="badge__text">nuevo</span>
-                    </span>
-                    <!-- Producto  -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Halloween (5).jpg' %}" alt="e">
-                            <a href="{% url 'alien' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-    
-                        <div class="card-body">
-                            <h6 class="card-title">Máscara Alien</h6>
-                            $8.990
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="nuevo">
-                        <span class="badge__text">nuevo</span>
-                    </span>
-                    <!-- Producto -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Halloween (7).jpg' %}" alt="f">
-                           
-                            <a href="{% url 'crybaby' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Máscara crybaby</h6>
-                            $9.990 CLP
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="nuevo">
-                        <span class="badge__text">nuevo</span>
-                    </span>
-                    <!-- Producto -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Halloween (6).jpg' %}" alt="g">
-                            
-                            <a href="{% url 'inosuke' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Máscara Inosuke</h6>
-                            $12.990
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="nuevo">
-                        <span class="badge__text">nuevo</span>
-                    </span>
-                    <!-- Producto -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Halloween (8).jpg' %}" alt="h">
-                           
-                            <a href="{% url 'bunny' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Máscara bunny</h6>
-                            $7.900 CLP
-                        </div>
-    
-                    </div>
-    
-                </div>
-    
-    
-            </div>
-    
-    
+
+
         </div>
-    
-        <!-- Carrusel Productos Populares------------------------------------------->
-        <br>
-        <h3 class="text text-center" id="nuestros">Populares</h3>
-    
-    
-        <div class="container mt-5 mb-5">
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="nuevo">
+                <span class="badge__text">nuevo</span>
+            </span>
+            <!--Producto-------------->
             <div class="card">
-    
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/navidad/pokemon.jpg' %}" alt="b">
+
+                    <a href="{% url 'penny' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+                <div class="card-body text-center">
+                    <h6 class="card-title ">Pokemón
+                        <br> Ornamento Navidad </h6>
+                    $3.990 CLP
+                </div>
+
+
             </div>
-            <div class="owl-carousel owl-theme">
-                <div class="item">
-                    <!---Etiqueta de sale------------>
-                    <span class="badge badge--sale" id="sale">
-                        <span class="badge__text">sale</span>
-                    </span>
-                    <!---Producto------------------------>
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Bags (16).jpg' %}" alt="Producto 1" class="card-img-top">
-                            <a href="{% url 'pokemochila' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Pokemochila</h6>
-                            $12.990 CLP
-                        </div>
-    
-    
-                    </div>
-    
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de sale -->
-                    <span class="badge badge--sale" id="sale">
-                        <span class="badge__text">sale</span>
-                    </span>
-                    <!--Producto-------------->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Papeleria (17).jpg' %}" alt="Producto 2" class="card-img-top">
-                            <a href="{% url 'memo' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-    
-                        <div class="card-body">
-                            <h6 class="card-title">Memo Gato</h6>
-                            $4.990 CLP
-                        </div>
-    
-    
-                    </div>
-    
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de descuento -->
-                    <span class="badge badge--sale" id="desc">
-                        <span class="badge__text">10%</span>
-                    </span>
-                    <!-- Producto -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Accesorios (16).jpg' %}" alt="Producto 3" class="card-img-top">
-                            <a href="{% url 'llavero' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-    
-                        <div class="card-body">
-                            <h6 class="card-title">Llavero Cute</h6>
-                            $3.900 CLP
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de descuento -->
-                    <span class="badge badge--sale" id="desc">
-                        <span class="badge__text">10%</span>
-                    </span>
-                    <!-- Producto  -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Phone (19).jpg' %}" alt="Producto 4" class="card-img-top">
-                            <a href="{% url 'car_avengers' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-    
-                        <div class="card-body">
-                            <h6 class="card-title">Carcasa Avengers</h6>
-                            $8.500 CLP
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de sale -->
-                    <span class="badge badge--sale" id="sale">
-                        <span class="badge__text">sale</span>
-                    </span>
-                    <!-- Producto  -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Phone (24).jpg' %}" alt="Producto 5" class="card-img-top">
-                           
-                            <a href="{% url 'car_naruto' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Carcasa Naruto</h6>
-                            $9.990
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="desc">
-                        <span class="badge__text">10%</span>
-                    </span>
-                    <!-- Producto -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Outfits (1).jpg' %}" alt="Producto 6" class="card-img-top">
-                            
-                            <a href="{% url 'sudadera' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-    
-                        <div class="card-body">
-                            <h6 class="card-title">Sudadera</h6>
-                            $13.990 CLP
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="sale">
-                        <span class="badge__text">sale</span>
-                    </span>
-                    <!-- Producto -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Papeleria (5).jpg' %}" alt="Producto 8" class="card-img-top">
-                           
-                            <a href="{% url 'sacapuntas' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-    
-                        <div class="card-body">
-                            <h6 class="card-title">Sacapuntas Egg</h6>
-                            $2.990
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <div class="item">
-                    <!-- Etiqueta de nuevo -->
-                    <span class="badge badge--sale" id="sale">
-                        <span class="badge__text">sale</span>
-                    </span>
-                    <!-- Producto -->
-                    <div class="card">
-                        <div class="product-single">
-                            <div class="single-overlay"></div>
-                            <img src="{% static 'core/img/Productos/Phone (14).jpg' %}" alt="Producto 9" class="card-img-top">
-                            <!-- Agregar referencia -->
-                            <a href="{% url 'audifonos' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Audífonos Gato</h6>
-                            $8.900 CLP
-                        </div>
-    
-                    </div>
-    
-                </div>
-    
-    
-            </div>
-    
-    
+
+
         </div>
-    
-    
-        <div class="container">
-            <br>
-            <br>
-            <br>
-            <h3 class="text text-center" id="marcas">Nuestras Marcas Favoritas</h3>
-            <div class="row mt-4">
-    
-                <!-- col-2 cada imagen ocupará 2 casillas -->
-                <div class="col-2">
-                    <img src="{% static 'core/img\marcas\cinnamoroll.png' %}" alt="logo 1" class="w-50">
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="nuevo">
+                <span class="badge__text">nuevo</span>
+            </span>
+            <!-- Producto -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/navidad/pusheen.jpg' %}" alt="c">
+
+                    <a href="{% url 'momo' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
                 </div>
-                <div class="col-2">
-                    <img src="{% static 'core/img\marcas\gudetama.png' %}" alt="logo 2" class="w-50">
+                <div class="card-body text-center">
+                    <h6 class="card-title ">Pusheen
+                        <br> Ornamento Navidad </h6>
+                    $5.990 CLP
                 </div>
-                <div class="col-2">
-                    <img src="{% static 'core/img\marcas\Marvel_logo_red.png' %}" alt="logo 3" class="w-50">
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="nuevo">
+                <span class="badge__text">nuevo</span>
+            </span>
+            <!-- Producto  -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/navidad/totoro.jpg' %}" alt="d">
+
+                    <a href="{% url 'muerto' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
                 </div>
-                <div class="col-2">
-                    <img src="{% static 'core/img\marcas\pusheen.png' %}" alt="logo 4" class="w-50">
+                <div class="card-body text-center">
+                    <h6 class="card-title ">Totoro
+                        <br> Ornamento Navidad </h6>
+                    $4.990 CLP
                 </div>
-                <div class="col-2">
-                    <img src="{% static 'core/img\marcas\rilakkuma.png' %}" alt="logo 5" class="w-50">
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="nuevo">
+                <span class="badge__text">nuevo</span>
+            </span>
+            <!-- Producto  -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/navidad/sailorMoon.jpg' %}" alt="e">
+                    <a href="{% url 'alien' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
                 </div>
-                <div class="col-2">
-                    <img src="{% static 'core/img\marcas\totoro.png' %}" alt="logo 6" class="w-50">
+
+                <div class="card-body text-center">
+                    <h6 class="card-title ">Sailor Moon
+                        <br> Ornamento Navidad </h6>
+                    $3.990 CLP
+                </div>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="nuevo">
+                <span class="badge__text">nuevo</span>
+            </span>
+            <!-- Producto -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/navidad/uni2.jpg' %}" alt="f">
+
+                    <a href="{% url 'crybaby' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+                <div class="card-body text-center">
+                    <h6 class="card-title ">Unicornio Kawaii
+                        <br> Ornamento Navidad </h6>
+                    $4.990 CLP
+                </div>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="nuevo">
+                <span class="badge__text">nuevo</span>
+            </span>
+            <!-- Producto -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/navidad/dc.jpg' %}" alt="g">
+
+                    <a href="{% url 'inosuke' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+                <div class="card-body text-center">
+                    <h6 class="card-title "> Dc Super Heroes
+                        <br> Ornamento Navidad </h6>
+                    $5.990 CLP
+                </div>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="nuevo">
+                <span class="badge__text">nuevo</span>
+            </span>
+            <!-- Producto -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/navidad/avengers.jpg' %}" alt="h">
+
+                    <a href="{% url 'bunny' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+                <div class="card-body text-center">
+                    <h6 class="card-title ">Avengers
+                        <br> Ornamento Navidad </h6>
+                    $4.990 CLP
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<!-- Carrusel Productos Populares------------------------------------------->
+<br>
+<h3 class="text text-center" id="nuestros">Populares</h3>
+
+
+<div class="container mt-5 mb-5">
+    <div class="card">
+
+    </div>
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <!---Etiqueta de sale------------>
+            <span class="badge badge--sale" id="sale">
+                <span class="badge__text">sale</span>
+            </span>
+            <!---Producto------------------------>
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/Productos/Bags (16).jpg' %}" alt="Producto 1" class="card-img-top">
+                    <a href="{% url 'pokemochila' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">Pokemochila</h6>
+                    $12.990 CLP
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de sale -->
+            <span class="badge badge--sale" id="sale">
+                <span class="badge__text">sale</span>
+            </span>
+            <!--Producto-------------->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/Productos/Papeleria (17).jpg' %}" alt="Producto 2"
+                        class="card-img-top">
+                    <a href="{% url 'memo' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="card-body">
+                    <h6 class="card-title">Memo Gato</h6>
+                    $4.990 CLP
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de descuento -->
+            <span class="badge badge--sale" id="desc">
+                <span class="badge__text">10%</span>
+            </span>
+            <!-- Producto -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/Productos/Accesorios (16).jpg' %}" alt="Producto 3"
+                        class="card-img-top">
+                    <a href="{% url 'llavero' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="card-body">
+                    <h6 class="card-title">Llavero Cute</h6>
+                    $3.900 CLP
+                </div>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de descuento -->
+            <span class="badge badge--sale" id="desc">
+                <span class="badge__text">10%</span>
+            </span>
+            <!-- Producto  -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/Productos/Phone (19).jpg' %}" alt="Producto 4" class="card-img-top">
+                    <a href="{% url 'car_avengers' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="card-body">
+                    <h6 class="card-title">Carcasa Avengers</h6>
+                    $8.500 CLP
+                </div>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de sale -->
+            <span class="badge badge--sale" id="sale">
+                <span class="badge__text">sale</span>
+            </span>
+            <!-- Producto  -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/Productos/Phone (24).jpg' %}" alt="Producto 5" class="card-img-top">
+
+                    <a href="{% url 'car_naruto' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">Carcasa Naruto</h6>
+                    $9.990
+                </div>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="desc">
+                <span class="badge__text">10%</span>
+            </span>
+            <!-- Producto -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/Productos/Outfits (1).jpg' %}" alt="Producto 6" class="card-img-top">
+
+                    <a href="{% url 'sudadera' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="card-body">
+                    <h6 class="card-title">Sudadera</h6>
+                    $13.990 CLP
+                </div>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="sale">
+                <span class="badge__text">sale</span>
+            </span>
+            <!-- Producto -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/Productos/Papeleria (5).jpg' %}" alt="Producto 8"
+                        class="card-img-top">
+
+                    <a href="{% url 'sacapuntas' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="card-body">
+                    <h6 class="card-title">Sacapuntas Egg</h6>
+                    $2.990
+                </div>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <!-- Etiqueta de nuevo -->
+            <span class="badge badge--sale" id="sale">
+                <span class="badge__text">sale</span>
+            </span>
+            <!-- Producto -->
+            <div class="card">
+                <div class="product-single">
+                    <div class="single-overlay"></div>
+                    <img src="{% static 'core/img/Productos/Phone (14).jpg' %}" alt="Producto 9" class="card-img-top">
+                    <!-- Agregar referencia -->
+                    <a href="{% url 'audifonos' %}"> <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">Audífonos Gato</h6>
+                    $8.900 CLP
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <h3 class="text text-center" id="marcas">Nuestras Marcas Favoritas</h3>
+    <div class="row mt-4">
+
+        <!-- col-2 cada imagen ocupará 2 casillas -->
+        <div class="col-2">
+            <img src="{% static 'core/img\marcas\cinnamoroll.png' %}" alt="logo 1" class="w-50">
+        </div>
+        <div class="col-2">
+            <img src="{% static 'core/img\marcas\gudetama.png' %}" alt="logo 2" class="w-50">
+        </div>
+        <div class="col-2">
+            <img src="{% static 'core/img\marcas\Marvel_logo_red.png' %}" alt="logo 3" class="w-50">
+        </div>
+        <div class="col-2">
+            <img src="{% static 'core/img\marcas\pusheen.png' %}" alt="logo 4" class="w-50">
+        </div>
+        <div class="col-2">
+            <img src="{% static 'core/img\marcas\rilakkuma.png' %}" alt="logo 5" class="w-50">
+        </div>
+        <div class="col-2">
+            <img src="{% static 'core/img\marcas\totoro.png' %}" alt="logo 6" class="w-50">
+        </div>
+    </div>
+
+</div>
+
+<br><br><br>
+
+<!-- Sobre nosotros mensaje ---------------------------------------------->
+<div style="background-color: #f0ecff;" id="marcas">
+    <div class="container">
+        <div style="padding-top: 80px; padding-bottom: 80px;" class="inner-container">
+
+            <h2 class="homepage-headline" style="text-align: center;">Mantente Friki y Kawaii</h2>
+            <p style="text-align: center; font-size: 16px; color: #999; line-height: 23px;">
+                Amamos dar regalos y mantener a nuestros amigos felices. Desde 2019 tenemos la misión
+                de entregar productos únicos y de gran calidad para todas las partes del mundo!, para lo cual
+                presentamos una selección de outfits, bags, papeleria, accesorios , phonecases y productos Gamer,
+                Mezclando los conceptos de Friki (geek) y Kawaii (lindo).
+                Disfruta de nuestros productos y no olvides en ponerte en contacto con nosotros. Sientete y vive
+                Frikiwaii!
+            </p>
+
+        </div>
+    </div>
+</div>
+<!-- Fin mensaje -->
+<br>
+<br>
+
+<!-- Descripciones seccion -------->
+<div class="site-section site-section-sm site-blocks-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
+                <div class="icon mr-4 align-self-start">
+                    <span class="icon-truck"></span>
+                </div>
+                <div class="text">
+                    <h5 class="text-uppercase">Envíos</h5>
+                    <p>Enviamos pedidos a prácticamente todos los países del mundo, No hay pedidos mínimos ni otros
+                        requisitos. ¡y el envío básico por correo aéreo siempre es gratis!. Los pedidos que incluyen
+                        productos que están todos en stock serán enviados
+                        dentro de un día hábil. Aseguramos que tu pedido llegará con integridad.</p>
                 </div>
             </div>
-    
-        </div>
-    
-        <br><br><br>
-    
-        <!-- Sobre nosotros mensaje ---------------------------------------------->
-        <div style="background-color: #f0ecff;" id="marcas">
-            <div class="container">
-                <div style="padding-top: 80px; padding-bottom: 80px;" class="inner-container">
-    
-                    <h2 class="homepage-headline" style="text-align: center;">Mantente Friki y Kawaii</h2>
-                    <p style="text-align: center; font-size: 16px; color: #999; line-height: 23px;">
-                        Amamos dar regalos y mantener a nuestros amigos felices. Desde 2019 tenemos la misión
-                        de entregar productos únicos y de gran calidad para todas las partes del mundo!, para lo cual
-                        presentamos una selección de outfits, bags, papeleria, accesorios , phonecases y productos Gamer,
-                        Mezclando los conceptos de Friki (geek) y Kawaii (lindo).
-                        Disfruta de nuestros productos y no olvides en ponerte en contacto con nosotros. Sientete y vive
-                        Frikiwaii!
-                    </p>
-    
+            <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon mr-4 align-self-start">
+                    <span class="icon-refresh2"></span>
+                </div>
+                <div class="text">
+                    <h5 class="text-uppercase">Cambios sin costo</h5>
+                    <p>Respaldamos todo lo que vendemos. Si no está satisfecho con sus compras, puede devolverlas para
+                        un reemplazo o reembolso dentro de los 30 días de haberlas
+                        recibido. Si su artículo tiene un defecto de fabricación en sus materiales o mano de obra, puede
+                        devolverlo en cualquier momento, incluso después de 30 días. En estos casos, estaremos
+                        encantados de cubrir los gastos de envío..</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon mr-4 align-self-start">
+                    <span class="icon-help"></span>
+                </div>
+                <div class="text">
+                    <h5 class="text-uppercase">Servicio al cliente</h5>
+                    <p>¿Tienes una pregunta? Envíenos un mensaje y le responderemos dentro de 1 día hábil. También
+                        agradecemos sus comentarios, preguntas, sugerencias e ideas para mejorar nuestra tienda y
+                        servicios.
+                        ¡Tus comentarios son importantes para nosotros!. Contáctanos a nuestro correo electrónico
+                        frikiwaii.official@gmail.com .</p>
                 </div>
             </div>
         </div>
-        <!-- Fin mensaje -->
-        <br>
-        <br>
-    
-        <!-- Descripciones seccion -------->
-        <div class="site-section site-section-sm site-blocks-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
-                        <div class="icon mr-4 align-self-start">
-                            <span class="icon-truck"></span>
-                        </div>
-                        <div class="text">
-                            <h5 class="text-uppercase">Envíos</h5>
-                            <p>Enviamos pedidos a prácticamente todos los países del mundo, No hay pedidos mínimos ni otros requisitos.  ¡y el envío básico por correo aéreo siempre es gratis!. Los pedidos que incluyen productos que están todos en stock serán enviados 
-                                dentro de un día hábil. Aseguramos que tu pedido llegará con integridad.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon mr-4 align-self-start">
-                            <span class="icon-refresh2"></span>
-                        </div>
-                        <div class="text">
-                            <h5 class="text-uppercase">Cambios sin costo</h5>
-                            <p>Respaldamos todo lo que vendemos. Si no está satisfecho con sus compras, puede devolverlas para un reemplazo o reembolso dentro de los 30 días de haberlas 
-                                recibido. Si su artículo tiene un defecto de fabricación en sus materiales o mano de obra, puede devolverlo en cualquier momento, incluso después de 30 días. En estos casos, estaremos encantados de cubrir los gastos de envío..</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon mr-4 align-self-start">
-                            <span class="icon-help"></span>
-                        </div>
-                        <div class="text">
-                            <h5 class="text-uppercase">Servicio al cliente</h5>
-                            <p>¿Tienes una pregunta? Envíenos un mensaje y le responderemos dentro de 1 día hábil. También agradecemos sus comentarios, preguntas, sugerencias e ideas para mejorar nuestra tienda y servicios. 
-                                ¡Tus comentarios son importantes para nosotros!. Contáctanos a nuestro correo electrónico frikiwaii.official@gmail.com .</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </div>
+</div>
+
+<!-- Sección Comunidad ------------------------------------------------>
+
+<br>
+<br>
+
+<div class="container">
+    <!-- Aquí ponian los logos -->
+    <!-- mt: margin-top mb: margin-button pd: padding-button-->
+    <!----------------- productos ------------------------>
+    <h2 class="homepage-headline" style="text-align: center; color:rgb(246, 134, 190);">Únete a la Comunidad
+        Frikiwaii!</h2>
+    <p style="text-align: center; font-size: 16px; color: #555; line-height: 23px;">Unete a la comunidad de
+        seguidores!<a style="color: #555;" href="https://www.blippo.com/new-products"> sube fotos</a> y
+        compártelas usando #Frikiwaii</p>
+    <br>
+    <br>
+    <div class="row">
+
+        <div class="col-2 sm-3" id="foto">
+            <img src="{% static 'core/img/Comunidad/Girl 1.jpg' %}" class="img-fluid" alt="Responsive image">
+            <span class="badge badge--sale" id="com">
+                <span class="badge__text">@mikie22</span>
+            </span>
         </div>
-    
-        <!-- Sección Comunidad ------------------------------------------------>
-    
-        <br>
-        <br>
-    
-        <div class="container">
-            <!-- Aquí ponian los logos -->
-            <!-- mt: margin-top mb: margin-button pd: padding-button-->
-            <!----------------- productos ------------------------>
-            <h2 class="homepage-headline" style="text-align: center; color:rgb(246, 134, 190);">Únete a la Comunidad
-                Frikiwaii!</h2>
-            <p style="text-align: center; font-size: 16px; color: #555; line-height: 23px;">Unete a la comunidad de
-                seguidores!<a style="color: #555;" href="https://www.blippo.com/new-products"> sube fotos</a> y
-                compártelas usando #Frikiwaii</p>
-            <br>
-            <br>
-            <div class="row">
-    
-                <div class="col-2 sm-3" id="foto">
-                    <img src="{% static 'core/img/Comunidad/Girl 1.jpg' %}" class="img-fluid" alt="Responsive image">
-                    <span class="badge badge--sale" id="com">
-                        <span class="badge__text">@mikie22</span>
-                    </span>
-                </div>
-    
-                <div class="col-2" id="foto">
-    
-                    <img src="{% static 'core/img/Comunidad/girl 2.jpg' %}" class="img-fluid" alt="Responsive image">
-                    <span class="badge badge--sale" id="com">
-                        <span class="badge__text">@sarh_</span>
-                    </span>
-                </div>
-    
-                <div class="col-2" id="foto">
-                    <img src="{% static 'core/img/Comunidad/varios.jpg' %}" class="img-fluid" alt="Responsive image">
-                    <span class="badge badge--sale" id="com">
-                        <span class="badge__text">@_tomdd</span>
-                    </span>
-    
-                </div>
-    
-                <div class="col-2" id="foto">
-                    <img src="{% static 'core/img/Comunidad/boy 1.jpg' %}" class="img-fluid" alt="Responsive image">
-                    <span class="badge badge--sale" id="com">
-                        <span class="badge__text">@reval11</span>
-                    </span>
-                </div>
-                <div class="col-2" id="foto">
-                    <img src="{% static 'core/img/Comunidad/boy 2.jpg' %}" class="img-fluid" alt="Responsive image">
-                    <span class="badge badge--sale" id="com">
-                        <span class="badge__text">@jor_boy</span>
-                    </span>
-    
-                </div>
-                <div class="col-2" id="foto">
-                    <img src="{% static 'core/img/Comunidad/girl 3.jpg' %}" class="img-fluid" alt="Responsive image">
-                    <span class="badge badge--sale" id="com">
-                        <span class="badge__text">@may_ts</span>
-                    </span>
-                </div>
-    
-    
-            </div>
+
+        <div class="col-2" id="foto">
+
+            <img src="{% static 'core/img/Comunidad/girl 2.jpg' %}" class="img-fluid" alt="Responsive image">
+            <span class="badge badge--sale" id="com">
+                <span class="badge__text">@sarh_</span>
+            </span>
         </div>
-        <!-- Fin sección comunidad-------------->
 
-        <!-- btn to top  -->
-    <script src="{% static 'core/js/scroll.top.js' %}"></script>
+        <div class="col-2" id="foto">
+            <img src="{% static 'core/img/Comunidad/varios.jpg' %}" class="img-fluid" alt="Responsive image">
+            <span class="badge badge--sale" id="com">
+                <span class="badge__text">@_tomdd</span>
+            </span>
 
-    <!-- Códigos Carrusel productos -->
+        </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <div class="col-2" id="foto">
+            <img src="{% static 'core/img/Comunidad/boy 1.jpg' %}" class="img-fluid" alt="Responsive image">
+            <span class="badge badge--sale" id="com">
+                <span class="badge__text">@reval11</span>
+            </span>
+        </div>
+        <div class="col-2" id="foto">
+            <img src="{% static 'core/img/Comunidad/boy 2.jpg' %}" class="img-fluid" alt="Responsive image">
+            <span class="badge badge--sale" id="com">
+                <span class="badge__text">@jor_boy</span>
+            </span>
 
-    <script src="{% static 'core/js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'core/js/jquery.mousewheel.min.js' %}"></script>
+        </div>
+        <div class="col-2" id="foto">
+            <img src="{% static 'core/img/Comunidad/girl 3.jpg' %}" class="img-fluid" alt="Responsive image">
+            <span class="badge badge--sale" id="com">
+                <span class="badge__text">@may_ts</span>
+            </span>
+        </div>
 
-    <!--Script Carrusel Productos, características, responsivo  -->
-    <script>
-        $('.owl-carousel').owlCarousel({
 
-            autoplay: false,
-            autoplayHoverPause: true,
-            items: 4,
-            nav: true,
-            dots: 0,
-            loop: true,
-            lazyload: true,
-            margin: 5,
-            responsive: {
-                0: {
-                    items: 1,
-                    dots: false
-                },
-                485: {
-                    items: 2,
-                    dots: false
-                },
-                728: {
-                    items: 3,
-                    loop: true
-                },
-                960: {
-                    items: 4,
-                    loop: true
-                },
-                1200: {
-                    items: 5,
-                    dots: false
-                }
+    </div>
+</div>
+<!-- Fin sección comunidad-------------->
+
+<!-- btn to top  -->
+<script src="{% static 'core/js/scroll.top.js' %}"></script>
+
+<!-- Códigos Carrusel productos -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="{% static 'core/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'core/js/jquery.mousewheel.min.js' %}"></script>
+
+<!--Script Carrusel Productos, características, responsivo  -->
+<script>
+    $('.owl-carousel').owlCarousel({
+
+        autoplay: false,
+        autoplayHoverPause: true,
+        items: 4,
+        nav: true,
+        dots: 0,
+        loop: true,
+        lazyload: true,
+        margin: 5,
+        responsive: {
+            0: {
+                items: 1,
+                dots: false
+            },
+            485: {
+                items: 2,
+                dots: false
+            },
+            728: {
+                items: 3,
+                loop: true
+            },
+            960: {
+                items: 4,
+                loop: true
+            },
+            1200: {
+                items: 5,
+                dots: false
             }
-        });
+        }
+    });
 
-        $('.owl-carousel').on('mousewheel', '.owl-stage', function (e) {
-            if (e.deltaY > 0) {
-                $('.owl-carousel').trigger('next.owl');
+    $('.owl-carousel').on('mousewheel', '.owl-stage', function (e) {
+        if (e.deltaY > 0) {
+            $('.owl-carousel').trigger('next.owl');
 
-            } else {
-                $('.owl-carousel').trigger('prev.owl');
-            }
-            e.preventDefault();
-        });
+        } else {
+            $('.owl-carousel').trigger('prev.owl');
+        }
+        e.preventDefault();
+    });
 
-    </script>
+</script>
 
 {% endblock contenido %}
