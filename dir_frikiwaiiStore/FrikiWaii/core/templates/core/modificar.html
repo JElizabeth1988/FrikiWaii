@@ -17,6 +17,9 @@
             <div class="col-12">
                 <h4>Registro de Productos</h4>
             </div>
+
+            <input type="hidden" name="txtId" id="txtId" value="{{producto.id}}">
+
             <div class="col-8 py-2">
                 <input type="text" class="form-control" id="txtCodigo" name="txtCodigo" placeholder="Ingrese Código">
             </div>
@@ -29,7 +32,11 @@
                     <select class="form-control" id="cboCategoria" name="cboCategoria">
                         <option value="0">Seleccione</option>
                         {% for x in categorias %}
-                        <option value="{{x.id}}">{{ x.nombre}}</option>
+                          <option 
+                          {% if x.id == producto.categoria.id %}
+                          {{'selected'}}
+                          {% endif %}
+                          value="{{x.id}}">{{ x.nombre}}</option>
                         {% endfor %}
 
                     </select>
