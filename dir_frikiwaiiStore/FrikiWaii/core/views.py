@@ -18,7 +18,7 @@ def registro(request):
         producto =  Producto()
         producto.codigo = request.POST.get("txtCodigo")
         producto.nombre = request.POST.get("txtnombre")
-        producto.descripcion = request.POST.get("txtAnio")
+        producto.descripcion = request.POST.get("txtDescripcion")
         producto.precio = request.POST.get("txtPrecio")
         # prod.imagen = request.FILES.get("txtImagen")
 
