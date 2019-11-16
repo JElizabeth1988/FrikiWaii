@@ -7,6 +7,7 @@ from django.contrib import messages
 def home(request):
     return render(request, 'core/home.html')
 
+# ---------------------------------------------------------------
 def registro(request):
     lista = Categoria.objects.all()
     data = {
@@ -27,22 +28,80 @@ def registro(request):
 
         try:
             producto.save()
-            mensaje = "agregado"
+            mensaje = "Agregado"
             messages.success(request, mensaje)
         except:
-            mensaje  = "error al agregado"
+            mensaje  = "Error al agregar"
             messages.error(request, mensaje)
 
         return redirect('registro')
 
     return render(request, 'core/registro.html', data)
 
-
-def modificar(request):
-    return render(request, 'core/modificar.html')
+# ----------------------------------------------------------------------
 
 def listado(request):
-    return render(request, 'core/listado.html')  
+    lista = Producto.objects.all()
+
+    data = {
+        'productos' : lista
+    }
+
+    return render(request, 'core/listado.html', data)
+
+# -----------------------------------------------------------------
+
+
+def eliminar(request, id):
+    auto  = Producto.objects.get(id=id)
+    
+    try:
+        producto.delete()
+        mensaje = "Eliminado"
+        messages.success(request, mensaje)
+    except :
+        mensaje = "No se pudo eliminar" 
+        messages.error(request, mensaje)
+
+    return redirect('listado')
+
+
+# ----------------------------------------------------------
+
+def modificar(request, id):
+   # variables que enviaremos a la vista
+    producto = Producto.objects.get(id=id)
+    categorias = Categoria.objects.all()
+    variables = {
+        'producto'  : producto,
+        'productos' : productos
+    }
+
+    if request.POST:
+        producto = Producto()
+        # se agrega el id para poder modificarlo
+        producto.id = request.POST.get('txtId')
+        producto.codigo = request.POST.get('txtCodigo')
+        producto.nombre = request.POST.get('txtModelo')
+        producto.descripcion = request.POST.get('txtDescripcion')
+        producto.precio = request.POST.get('txtPrecio')
+        categoria  = categorias()
+        categoria.id = request.POST.get('cboCategoria')
+        producto.categoria = categoria
+
+        try:
+            producto.save()
+            mensaje = "Modificado correctamente"
+            messages.success(request, mensaje)
+        except:
+            mensaje = "Error al modificar"
+            messages.error(request, mensaje)
+
+        return redirect('listado')
+        
+    return render(request, 'core/modificar.html', variables)
+
+# -----------------------------------------------------------
 
 def alien(request):
     return render(request, 'core/alien.html')

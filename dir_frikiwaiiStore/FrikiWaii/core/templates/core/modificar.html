@@ -6,7 +6,7 @@
         <div class="col">
             <br>
             <br>
-            <img src="{% static 'core/img/box.png' %}" alt="box">
+            <img src="{% static 'core/img/box.png' %}" alt="auto 1">
         </div>
     </div>
     <!-- formulario -->
@@ -15,7 +15,10 @@
         <div class="row mt-4 ">
 
             <div class="col-12">
-                <h4>Modificar Productos</h4>
+                <h4>Registro de Productos</h4>
+            </div>
+            <div class="col-8 py-2">
+                <input type="text" class="form-control" id="txtCodigo" name="txtCodigo" placeholder="Ingrese Código">
             </div>
             <div class="col-8 py-2">
                 <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Ingrese Nombre">
@@ -23,11 +26,11 @@
             <div class="col-8 ">
                 <div class="form-group">
                     <label for="cboMarca">Seleccione una categoría de la lista</label>
-                    <select class="form-control" id="cboCategoría" name="cboCategoría">
+                    <select class="form-control" id="cboCategoria" name="cboCategoria">
                         <option value="0">Seleccione</option>
-                        <!-- {% for x in marcas %} 
+                        {% for x in categorias %}
                         <option value="{{x.id}}">{{ x.nombre}}</option>
-                        {% endfor %}-->
+                        {% endfor %}
 
                     </select>
                 </div>
