@@ -1,11 +1,42 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Producto, Categoria
+from django.contrib import messages
+
 
 # Create your views here.
 def home(request):
     return render(request, 'core/home.html')
 
 def registro(request):
-    return render(request, 'core/registro.html')
+    lista = Categoria.objects.all()
+    data = {
+        'categorias' : lista
+    }
+
+    if request.POST:
+        producto =  Producto()
+        producto.codigo = request.POST.get("txtCodigo")
+        producto.nombre = request.POST.get("txtnombre")
+        producto.descripcion = request.POST.get("txtAnio")
+        producto.precio = request.POST.get("txtPrecio")
+        # prod.imagen = request.FILES.get("txtImagen")
+
+        categoria = Categoria()
+        categoria.id = request.POST.get("cboCategoria")
+        producto.categoria  = categoria
+
+        try:
+            producto.save()
+            mensaje = "agregado"
+            messages.success(request, mensaje)
+        except:
+            mensaje  = "error al agregado"
+            messages.error(request, mensaje)
+
+        return redirect('registro')
+
+    return render(request, 'core/registro.html', data)
+
 
 def modificar(request):
     return render(request, 'core/modificar.html')
