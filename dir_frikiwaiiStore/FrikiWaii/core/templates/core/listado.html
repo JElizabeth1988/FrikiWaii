@@ -5,11 +5,12 @@
         <div class="col border">
             <table class="table ">
                 <tr>
-                    <th>Codigo</th>
+                    <th>Código</th>
                     <th>Nombre</th>
-                    <th>Categoria</th>
-                    <th>Descripcion</th>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
                     <th>Precio</th>
+                    <th>Imagen</th>
                 </tr>
 
                 {% for x in productos %}
@@ -19,13 +20,10 @@
                     <td>{{ x.categoria.nombre }}</td>
                     <td>{{ x.descripcion }}</td>
                     <td>{{ x.precio }}</td>
+                    <td>{{ x.imagen }}</td>
 
-                    {% comment %} {% if user.is_staff  %} {% endcomment %}
-
-                        {% comment %} <td><a class="btn btn-dark" href="{% url 'eliminar' x.id %}">Eliminar </a></td> {% endcomment %}
-                        {% comment %} <td><a class="btn btn-dark" href="{% url 'modificar' x.id %}">Modificar </a></td> {% endcomment %}
-
-                    {% comment %} {% endif %} {% endcomment %}
+                    {% comment %} <td><a class="btn btn-dark" href="{% url 'eliminar' x.id %}">Eliminar </a></td> {% endcomment %}
+                    <td><a class="btn btn-dark" href="{% url 'modificar' x.id %}">Modificar </a></td>
 
                 </tr>
                 {% endfor %}

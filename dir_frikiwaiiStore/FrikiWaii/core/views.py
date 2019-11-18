@@ -73,8 +73,8 @@ def modificar(request, id):
     producto = Producto.objects.get(id=id)
     categorias = Categoria.objects.all()
     variables = {
-        'producto'  : producto,
-        'productos' : productos
+        'producto'   : producto,
+        'categorias' : categorias
     }
 
     if request.POST:
@@ -82,10 +82,10 @@ def modificar(request, id):
         # se agrega el id para poder modificarlo
         producto.id = request.POST.get('txtId')
         producto.codigo = request.POST.get('txtCodigo')
-        producto.nombre = request.POST.get('txtModelo')
+        producto.nombre = request.POST.get('txtNombre')
         producto.descripcion = request.POST.get('txtDescripcion')
         producto.precio = request.POST.get('txtPrecio')
-        categoria  = categorias()
+        categoria  = categoria()
         categoria.id = request.POST.get('cboCategoria')
         producto.categoria = categoria
 
