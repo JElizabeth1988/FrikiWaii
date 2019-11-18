@@ -53,17 +53,18 @@ def listado(request):
 
 
 def eliminar(request, id):
-    auto  = Producto.objects.get(id=id)
+    producto  = Producto.objects.get(id=id)
     
     try:
         producto.delete()
         mensaje = "Eliminado"
         messages.success(request, mensaje)
     except :
-        mensaje = "No se pudo eliminar" 
+        mensaje = "Error al eliminar" 
         messages.error(request, mensaje)
 
     return redirect('listado')
+
 
 
 # ----------------------------------------------------------

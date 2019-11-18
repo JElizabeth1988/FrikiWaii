@@ -1,13 +1,14 @@
 from django.urls import path
-from .views import home, registro,modificar,listado, alien, audifonos, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera
+from .views import home, registro,modificar,eliminar,listado, alien, audifonos, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home, name="home"),
     path('registro/', registro, name="registro"),
-     path('modificar/<id>/', modificar, name="modificar"),
+    path('modificar/<id>/', modificar, name="modificar"),
     path('listado/', listado, name="listado"),
+    path('eliminar/<id>/', eliminar, name="eliminar"),
     path('SailorMoon/', alien, name="alien"),
     path('Audifonos/', audifonos, name="audifonos"),
     path('Avengers/', bunny, name="bunny"),
