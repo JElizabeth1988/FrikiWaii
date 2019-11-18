@@ -88,7 +88,6 @@ def modificar(request, id):
         categoria  = categoria()
         categoria.id = request.POST.get('cboCategoria')
         producto.categoria = categoria
-
         try:
             producto.save()
             mensaje = "Modificado correctamente"
