@@ -20,3 +20,9 @@ urlpatterns = [
     path('', include('core.urls')),
     path('admin/', admin.site.urls),
 ]
+
+# gráfica del panel de administración
+admin.site.site_header = " Panel de Administración FrikiWaii "
+# Titulo pestaña
+admin.site.site_title = " Frikiwaii "
+admin.site.index_title = " Mantención de Datos "
