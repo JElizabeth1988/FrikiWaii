@@ -1,5 +1,7 @@
 from django.urls import path
 from .views import home, registro,modificar,listado, alien, audifonos, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home, name="home"),
@@ -31,3 +33,7 @@ urlpatterns = [
     path('sudadera-avengers/', sudadera, name="sudadera"), 
     
 ]
+
+# carga de archivos
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

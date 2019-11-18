@@ -10,7 +10,7 @@
         </div>
     </div>
     <!-- formulario -->
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row mt-4 ">
 
@@ -41,6 +41,12 @@
             <div class="col-8 py-2">
                 <input type="text" class="form-control" id="txtPrecio" name="txtPrecio" placeholder="Ingrese Precio">
             </div>
+
+              <!-- imagenes -->
+              <div class="col-8 py-2">
+                <input type="file" name="txtImagen" id="txtImagen">
+            </div>
+
             <div class="col-8 py-2">
                 <input type="submit" class="btn btn-dark" id="btnAgregar" name="btnAgregar" value="Agregar">
             </div>
