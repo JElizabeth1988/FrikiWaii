@@ -86,6 +86,8 @@ def modificar(request, id):
         producto.nombre = request.POST.get('txtNombre')
         producto.descripcion = request.POST.get('txtDescripcion')
         producto.precio = request.POST.get('txtPrecio')
+        producto.imagen = request.FILES.get("txtImagen")
+
 
         categoria  = Categoria()
         categoria.id = request.POST.get('cboCategoria')
