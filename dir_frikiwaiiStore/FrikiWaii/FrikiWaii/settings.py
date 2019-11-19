@@ -29,7 +29,9 @@ ALLOWED_HOSTS = []
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-
+#cambiamos la ruta a donde redirecciona el login
+LOGIN_REDIRECT_URL ='/'
+LOGOUT_REDIRECT_URL ='/'
 
 # Application definition
 

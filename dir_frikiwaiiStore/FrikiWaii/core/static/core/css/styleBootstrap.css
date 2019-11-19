@@ -24,7 +24,8 @@
 }
 
 #header a{
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: bold;
   color: #333;
 
 }
@@ -448,7 +449,7 @@ div {
 }
 /* Contenedor shipping -------------------- */
 .free-shipping {
-  font-size: 13px;
+  font-size: 16px;
 }
 
 /* Parte descuento pumpkin --------------- */

@@ -20,10 +20,16 @@
                     <td>{{ x.categoria.nombre }}</td>
                     <td>{{ x.descripcion }}</td>
                     <td>{{ x.precio }}</td>
-                    <td>{{ x.imagen }}</td>
+                    <td>
+                    {% if x.imagen %}
 
-                    <td><a class="btn btn-dark" href="{% url 'eliminar' x.id %}">Eliminar </a></td>
-                    <td><a class="btn btn-dark" href="{% url 'modificar' x.id %}">Modificar </a></td>
+                   <img src="{{x.imagen.url}}" alt="img" width="100" height="100">
+
+                    {% endif %}
+                    </td>
+                    
+                    <td><a class="btn btn-dark" href="{% url 'eliminar' x.id %}" style="font-size: 12px" >Eliminar </a></td>
+                    <td><a class="btn btn-dark" href="{% url 'modificar' x.id %}" style="font-size: 12px" >Modificar </a></td>
 
                 </tr>
                 {% endfor %}
