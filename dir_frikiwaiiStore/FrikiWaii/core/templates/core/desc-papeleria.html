@@ -58,151 +58,38 @@
                     <!----------------- productos ------------------------>
 
                     <div class="row" id="cuerpo">
+                        {% for x in productos %}
+                            
+                            {% if x.categoria.nombre == 'Papelería' %}
+                            
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <span class="badge badge--sale" id="sale">
+                                        <span class="badge__text">SALE</span>
+                                    </span>
+                                    <div class="card h-100">
+                                        <a href="#"><img class="card-img-top" src="{{x.imagen.url}}"
+                                                alt="Producto 1"></a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="#">{{x.nombre}}</a>
+                                            </h4>
+                                            <h5>${{x.precio}} CLP</h5>
+                                            <p class="card-text">
+                                                {{x.descripcion}}
+                                            </p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
+                                                    class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
+                                                    aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
+                                                        class="fa fa-star"></i></span></p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="sale">
-                                <span class="badge__text">SALE</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Papeleria (1).jpg' %}"
-                                        alt="Producto 1"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Estuche MILK</a>
-                                    </h4>
-                                    <h5>$4.990 CLP</h5>
-                                    <p class="card-text">Material: PU <br>
-                                        Tamaño: 20 cm x 6 cm x 5 cm<br>
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
-                                            class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
-                                            aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
-                                                class="fa fa-star"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
+                            {% endif %}
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="sale">
-                                <span class="badge__text">SALE</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Papeleria (9).jpg' %}"
-                                        alt="Producto 2"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Lápiz Konoashi No Face</a>
-                                    </h4>
-                                    <h5>$3.990 CLP</h5>
-                                    <p class="card-text">Material: plastico
-                                        <br>
-                                        Tamaño : 13 cm<br> </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
-                                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="sale">
-                                <span class="badge__text">SALE</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Papeleria (5).jpg' %}"
-                                        alt="Producto 3"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Sacapuntas Egg</a>
-                                    </h4>
-                                    <h5>$2.900 CLP</h5>
-                                    <p class="card-text">Material: plastico
-                                        <br>
-                                        Tamaño: 5cm x 4cm <br> </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
-                                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="nuevo">
-                                <span class="badge__text">nuevo</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Papeleria (13).jpg' %}"
-                                        alt="Producto 4"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Lápiz Avengers</a>
-                                    </h4>
-                                    <h5>$5.990 CLP</h5>
-                                    <p class="card-text">Tamaño: 15 cm<br> </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
-                                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="sale">
-                                <span class="badge__text">SALE</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Papeleria (12).jpg' %}"
-                                        alt="Producto 5"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Agenda Rick and Morty</a>
-                                    </h4>
-                                    <h5>$10.990 CLP</h5>
-                                    <p class="card-text">Tamaño: 20cm x 15cm<br>
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
-                                            class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
-                                            aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
-                                                class="fa fa-star"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="nuevo">
-                                <span class="badge__text">nuevo</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Papeleria (17).jpg' %}"
-                                        alt="Producto 6"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Sticky Memo Gato</a>
-                                    </h4>
-                                    <h5>$4.990 CLP</h5>
-                                    <p class="card-text"> Tamaño: 5 cm<br> </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
-                                            class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
-                                            aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
-                                                class="fa fa-star"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
 
                     </div>
                     <!-- /.row -->

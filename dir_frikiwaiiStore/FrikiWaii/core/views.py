@@ -51,6 +51,60 @@ def listado(request):
     }
 
     return render(request, 'core/listado.html', data)
+# ----------------LISTA DE LOS PRODUCTOS CON REDIRECCION A LA PÁGINA.html--------------
+def listadoOutfits(request):
+    lista = Producto.objects.all()
+
+    data = {
+        'productos' : lista
+    }
+
+    return render(request, 'core/desc-outfits.html', data)
+
+def listadoBags(request):
+    lista = Producto.objects.all()
+
+    data = {
+        'productos' : lista
+    }
+
+    return render(request, 'core/desc-bags.html', data)
+
+def listadoPapeliria(request):
+    lista = Producto.objects.all()
+
+    data = {
+        'productos' : lista
+    }
+
+    return render(request, 'core/desc-papeleria.html', data)
+    
+def listadoAccesorios(request):
+    lista = Producto.objects.all()
+
+    data = {
+        'productos' : lista
+    }
+
+    return render(request, 'core/desc-accesorios.html', data)
+
+def listadoPhoneCase(request):
+    lista = Producto.objects.all()
+
+    data = {
+        'productos' : lista
+    }
+
+    return render(request, 'core/desc-phonecase.html', data)
+
+def listadoGamerStyle(request):
+    lista = Producto.objects.all()
+
+    data = {
+        'productos' : lista
+    }
+
+    return render(request, 'core/desc-gamerstyle.html', data)
 
 # -----------------------------------------------------------------
 

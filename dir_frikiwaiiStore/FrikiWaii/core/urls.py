@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, registro,modificar,eliminar,listado, alien, audifonos, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera
+from .views import home, registro,modificar,eliminar,listado, alien, audifonos,listadoGamerStyle,listadoPhoneCase,listadoAccesorios,listadoPapeliria,listadoOutfits,listadoBags, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -16,12 +16,12 @@ urlpatterns = [
     path('Carcasa-naruto/', car_naruto, name="car_naruto"),
     path('Carro/', carro, name="carro"),
     path('unicornioKawaii/', crybaby, name="crybaby"),
-    path('Accesorios/', desc_accesorios, name="desc_accesorios"),
-    path('Bags/', desc_bags, name="desc_bags"),
-    path('GamerStyle/', desc_gamerstyle, name="desc_gamerstyle"),
-    path('Outfits/', desc_outfits, name="desc_outfits"),
-    path('Papeleria/', desc_papeleria, name="desc_papeleria"),
-    path('PhoneCase/', desc_phonecase, name="desc_phonecase"),
+    path('Accesorios/', listadoAccesorios, name="desc_accesorios"),
+    path('Bags/', listadoBags, name="desc_bags"),
+    path('GamerStyle/', listadoGamerStyle, name="desc_gamerstyle"),
+    path('Outfits/', listadoOutfits, name="desc_outfits"),
+    path('Papeleria/', listadoPapeliria, name="desc_papeleria"),
+    path('PhoneCase/', listadoPhoneCase, name="desc_phonecase"),
     path('Dc/', inosuke, name="inosuke"),
     path('Extraño-Mundo-de-Jack/', joker, name="joker"),
     path('llavero/', llavero, name="llavero"),

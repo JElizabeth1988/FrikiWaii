@@ -2,11 +2,16 @@
 
  <!-- Para volver inicio -->
  <div class="bg-light py-3">
+
     <div class="container">
+
       <div class="row">
+
       <div class="col-md-12 mb-0"><a href="{% url 'home' %}" id="inicio">Inicio</a> <span class="mx-2 mb-0">/</span> <strong class="text-black" id="nombre">Accesorios</strong></div>
       </div>
+
     </div>
+
   </div>  
 <!------------------------>
 
@@ -26,6 +31,7 @@
 
                     <!-- Categorías Productos -->
                     <h2 class="my-4">Categorías</h2>
+
                     <div class="list-group">
                         <a href="{% url 'desc_bags' %}" class="list-group-item">Bags</a>
                         <a href="{% url 'desc_outfits' %}" class="list-group-item">Outfits</a>
@@ -55,158 +61,51 @@
                         <br>
 
                         <div class="row" id="cuerpo">
+                            {% for x in productos %}
 
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <span class="badge badge--sale" id="nuevo">
-                                    <span class="badge__text">nuevo</span>
-                                </span>
-                                <div class="card h-100">
-                                    <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Accesorios (17).jpg' %}"
-                                            alt="Calceta"></a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">Jockey Pokemon</a>
-                                        </h4>
-                                        <h5>$8.900 CLP</h5>
-                                        <p class="card-text">Tamaño: 20 cm x 30 cm <br>
-                                            Colores: rojo y blanco<br>
-                                            Material: Sintético
-                                        </p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
-                                                class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
-                                                aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
-                                                    class="fa fa-star"></i></span></p>
-                                    </div>
-                                </div>
-                            </div>
+                                {% if  x.categoria.nombre == 'Accesorios'  %}
 
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <span class="badge badge--sale" id="sale">
-                                    <span class="badge__text">SALE</span>
-                                </span>
-                                <div class="card h-100">
-                                    <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Accesorios (11).jpg' %}"
-                                            alt="Jockey"></a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">Jockey Cat</a>
-                                        </h4>
-                                        <h5>$10.500 CLP</h5>
-                                        <p class="card-text">Tamaño: 30 cm x 25 cm <br>
-                                            Colores: Blanco, celeste y rosado <br>
-                                            Material: Algodón </p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                                aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
-                                                class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                                aria-hidden="true"></i></p>
-                                    </div>
-                                </div>
-                            </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
 
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <span class="badge badge--sale" id="sale">
-                                    <span class="badge__text">SALE</span>
-                                </span>
-                                <div class="card h-100">
-                                    <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Accesorios (16).jpg' %}"
-                                            alt="Llavero Cute"></a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">Llavero Cute</a>
-                                        </h4>
-                                        <h5>$3.900 CLP</h5>
-                                        <p class="card-text">Tamaño: 15 cm x 15 cm <br>
-                                            Colores: Varios <br>
-                                            Material: Sintético</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                                aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
-                                                class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                                aria-hidden="true"></i></p>
-                                    </div>
-                                </div>
-                            </div>
+                                        <span class="badge badge--sale" id="nuevo">
+                                            <span class="badge__text">nuevo</span>
+                                        </span>
 
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <span class="badge badge--sale" id="nuevo">
-                                    <span class="badge__text">nuevo</span>
-                                </span>
-                                <div class="card h-100">
-                                    <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Accesorios (5).jpg' %}"
-                                            alt="Llvero Avengers"></a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">LLavero Avengers</a>
-                                        </h4>
-                                        <h5>$5.9900 CLP</h5>
-                                        <p class="card-text">Tamaño: 10 cm x 15 cm <br>
-                                            Formas: Varias <br>
-                                            Material: Silicon</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                                aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
-                                                class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                                aria-hidden="true"></i></p>
-                                    </div>
-                                </div>
-                            </div>
+                                        <div class="card h-100">
 
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <span class="badge badge--sale" id="nuevo">
-                                    <span class="badge__text">nuevo</span>
-                                </span>
-                                <div class="card h-100">
-                                    <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Accesorios (12).jpg' %}"
-                                            alt="Reloj"></a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">Reloj Avengers</a>
-                                        </h4>
-                                        <h5>$55.990 CLP</h5>
-                                        <p class="card-text">Reloj Original de la marca Marvel <br>
-                                            Color: Único <br>
-                                            Tamaño: Único
-                                        </p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
-                                                class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
-                                                aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
-                                                    class="fa fa-star"></i></span></p>
-                                    </div>
-                                </div>
-                            </div>
+                                            <a href="#"><img class="card-img-top" src="{{x.imagen.url}}"
+                                                    alt="Calceta"></a>
 
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <span class="badge badge--sale" id="sale">
-                                    <span class="badge__text">SALE</span>
-                                </span>
-                                <div class="card h-100">
-                                    <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Phone (14).jpg' %}"
-                                            alt="Audífonos"></a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">Audífonos Neko</a>
-                                        </h4>
-                                        <h5>$8.990 CLP</h5>
-                                        <p class="card-text"> Reloj forma Gato <br>
-                                            Color: Único <br>
-                                            Tamño: Único</p>
+                                            <div class="card-body">
+
+                                                <h4 class="card-title">
+                                                    <a href="#">{{x.nombre}}</a>
+                                                </h4>
+
+                                                <h5>${{x.precio}} CLP</h5>
+
+                                                <p class="card-text">
+                                                    {{x.descripcion}}
+                                                </p>
+
+                                            </div>
+
+                                            <div class="card-footer">
+
+                                                <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
+                                                        class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
+                                                        aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
+                                                            class="fa fa-star"></i></span></p>
+
+                                            </div>
+
+                                        </div>
+
                                     </div>
-                                    <div class="card-footer">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
-                                                class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
-                                                aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
-                                                    class="fa fa-star"></i></span></p>
-                                    </div>
-                                </div>
-                            </div>
+                                    
+                                {% endif %}
+
+                            {% endfor %}
 
                         </div>
                         <!-- /.row -->
@@ -231,22 +130,29 @@
             <div class="col-2"> 
                 <img src="{% static 'core/img\marcas\cinnamoroll.png' %}" alt="logo 1" class="w-50">
             </div>
+
             <div class="col-2">
                 <img src="{% static 'core/img\marcas\gudetama.png' %}" alt="logo 2" class="w-50">
             </div>
+
             <div class="col-2">
                 <img src="{% static 'core/img\marcas\Marvel_logo_red.png' %}" alt="logo 3" class="w-50">
             </div>
+
             <div class="col-2">
                 <img src="{% static 'core/img\marcas\pusheen.png' %}" alt="logo 4" class="w-50">
             </div>
+
             <div class="col-2">
                 <img src="{% static 'core/img\marcas\rilakkuma.png' %}" alt="logo 5" class="w-50">
             </div>
+
             <div class="col-2">
                 <img src="{% static 'core/img\marcas\totoro.png' %}" alt="logo 6" class="w-50">
             </div>
+
         </div>
+        
         <br>
 
 {% endblock contenido %}

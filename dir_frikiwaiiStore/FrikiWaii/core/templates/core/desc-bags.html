@@ -58,149 +58,42 @@
 
                     <!----------------- productos ------------------------>
 
-
                     <div class="row" id="cuerpo">
+                        
+                        {% for x in productos %}
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="nuevo">
-                                <span class="badge__text">nuevo</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Bags (16).jpg' %}"
-                                        alt="Producto 1"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Poke Mochila</a>
-                                    </h4>
-                                    <h5>$12.990 CLP</h5>
-                                    <p class="card-text">Poke-Mochila</h5>
-                                        <p class="card-text">Tamaño único<br> </p>
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
-                                            class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
-                                            aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
-                                                class="fa fa-star"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
+                            {% if x.categoria.nombre == 'Bags' %}
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="nuevo">
-                                <span class="badge__text">nuevo</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Bags (15).jpg' %}"
-                                        alt="Producto 2"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Mochila Kaonashi No Face</a>
-                                    </h4>
-                                    <h5>$12.990 CLP</h5>
-                                    <p class="card-text">Tamaño único<br> </p>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <span class="badge badge--sale" id="nuevo">
+                                        <span class="badge__text">nuevo</span>
+                                    </span>
+                                    <div class="card h-100">
+                                        <a href="#"><img class="card-img-top" src="{{x.imagen.url}}"
+                                                alt="Producto 1"></a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="#">{{x.nombre}}</a>
+                                            </h4>
+                                            <h5>${{x.precio}} CLP</h5>
+                                            <p class="card-text">{{x.nombre}}</h5>
+                                                <p class="card-text">
+                                                    {{x.descripcion}}<br>
+                                                </p>
+                                            </p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
+                                                    class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
+                                                    aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
+                                                        class="fa fa-star"></i></span></p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-footer">
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
-                                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i></p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="sale">
-                                <span class="badge__text">SALE</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Bags (9).jpg' %}"
-                                        alt="Producto 3"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Mochila Capitán Ámerica</a>
-                                    </h4>
-                                    <h5>$15.990 CLP</h5>
-                                    <p class="card-text">Tamaño único<br> </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
-                                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i></p>
-                                </div>
-                            </div>
-                        </div>
+                            {% endif %}
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="sale">
-                                <span class="badge__text">SALE</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Bags (11).jpg' %}"
-                                        alt="Producto 4"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Mochila Marvel Thor</a>
-                                    </h4>
-                                    <h5>$11.990 CL</h5>
-                                    <p class="card-text"> Tamaño: 20 x 30 </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
-                                            class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                            aria-hidden="true"></i></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="nuevo">
-                                <span class="badge__text">nuevo</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Bags (14).jpg' %}"
-                                        alt="Producto 5"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Mochila Cute Canvas</a>
-                                    </h4>
-                                    <h5>$16.990 CL</h5>
-                                    <p class="card-text">Tamaño Unico<br></p>
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
-                                            class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
-                                            aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
-                                                class="fa fa-star"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <span class="badge badge--sale" id="sale">
-                                <span class="badge__text">SALE</span>
-                            </span>
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="{% static 'core/img/Productos/Bags (17).jpg' %}"
-                                        alt="Producto 6"></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Bolso Gutedama</a>
-                                    </h4>
-                                    <h5>$12.990 CL</h5>
-                                    <p class="card-text">Tamaño único<br> </p>
-                                </div>
-                                <div class="card-footer">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i><i aria-hidden="true"
-                                            class="fa fa-star"></i><i aria-hidden="true" class="fa fa-star"></i><i
-                                            aria-hidden="true" class="fa fa-star"></i><span><i aria-hidden="true"
-                                                class="fa fa-star"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
 
                     </div>
                     <!-- /.row -->
