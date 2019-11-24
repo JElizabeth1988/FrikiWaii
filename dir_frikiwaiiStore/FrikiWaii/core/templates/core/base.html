@@ -74,14 +74,15 @@
 
                             <!-- <a href="#"></a> |USD |</a> -->
                             <!-- {% if user.is_authenticated %} -->
+                             <!-- usuario logueado -->
 
-                            <a href="{% url 'registro' %}">|Registro |</a>
+                            <a href="">Bienvenido {{ user.username.title }}</a>
 
-                            <a href="{% url 'listado' %}">Listado|</a>
+                            <a href="{% url 'registro' %}"> | Registro |</a>
 
-                            <!-- usuario logueado -->
+                            <a href="{% url 'listado' %}"> Listado |</a>
 
-                            <a href="">Bienvenido: {{ user.username }} </a>
+                           
 
                             <!-- cerrar sesión -->
 
