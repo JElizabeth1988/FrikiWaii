@@ -508,6 +508,15 @@ a:link {
     color: rgb(67, 24, 116);
     
   }
+/* Para enlaces a:link en login */
+  #log{
+    color: black;
+  }
+
+  #log:hover {
+    color: rgb(182, 32, 144);
+  }
+/* Para enlaces a:link en login */
   
   /* link seleccionado*/
   a:active {
