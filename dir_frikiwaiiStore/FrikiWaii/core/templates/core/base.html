@@ -91,7 +91,7 @@
 
                             <!-- {% else %} -->
                             <!-- Inicio Sesión -->
-                                <a  href="{% url 'login' %}">Iniciar Sesión</a>
+                                <a  href="{% url 'login' %}"></a>Iniciar Sesión</a>
                             <!-- {% endif %} -->
 
 
@@ -166,7 +166,7 @@
                 </ul>
                 <ul class="nav navbar-nav ">
                     <li class="nav-item">
-                        <a href="#"><span class=" nav-link fas fa-sign-in-alt"></span> Iniciar Sesión</a>
+                        <a href="{% url 'login' %}"><span class=" nav-link fas fa-sign-in-alt"></span> Iniciar Sesión</a>
                     </li>
                     <li class="nav-item">
                         <a href="#"><span class=" nav-link fas fa-user-plus"></span> Registrarse</a>

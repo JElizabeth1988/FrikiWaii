@@ -3,6 +3,7 @@ from .models import Producto, Categoria
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
 
+
 # Create your views here.
 def home(request):
     return render(request, 'core/home.html')
@@ -232,4 +233,4 @@ def sacapuntas(request):
 def sudadera(request):
     return render(request, 'core/sudadera-av.html')
 
-    
+
