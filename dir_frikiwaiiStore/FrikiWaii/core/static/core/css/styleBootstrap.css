@@ -512,7 +512,7 @@ a:link {
 
 /* Para enlaces a:link en login */
   #log{
-    color: rgb(148, 141, 141);
+    color: rgb(105, 105, 105);
   }
 
   #log:hover {
