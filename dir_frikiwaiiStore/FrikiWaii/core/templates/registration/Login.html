@@ -1,24 +1,11 @@
 {% extends "core/base.html" %} {% load static %} {% block contenido %}
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-
-    <title>Login</title>
-</head> -->
+{% load i18n static %}
 
 <body>
     <br>
     <br>
-    <br>
-    
-
-    <div class="Ventana" id="vent">
+    <div class="Ventana text-center" id="vent">
 
         <div class="global-container col-12">
             <div class="row justify-content-center">
@@ -26,27 +13,74 @@
                     <div class="card-body ">
                         <h3 class="card-title text-center">¡Inicie Sesión!</h3>
                         <div class="card-text">
+                            {% block content %}
+                            {% if form.errors and not form.non_field_errors %}
+                            <p class="errornote">
+                                {% if form.errors.items|length == 1 %}{% trans "Error al Ingresar Campos" %}{% else %}{% trans "Campos erroneos." %}{% endif %}
+                            </p>
+                            {% endif %}
+                            <!-- Error de campos -->
+                            {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}
+                            <p class="errornote " style="font-size: 13px; color:brown;">
+                                {% blocktrans trimmed %}
+                                <b> Por favor, introduzca un nombre de usuario y <br>
+                                    clave correctos. Observe que ambos campos <br>
+                                    pueden ser sensibles a mayúsculas. </b>
+                                {% endblocktrans %}
+
+                            </p>
+                            {% endfor %}
+                            {% endif %}
+
+                            <div id="content-main">
+
+                                {% if user.is_authenticated %}
+                                <p class="errornote" style="font-size: 15px;">
+                                    {% blocktrans trimmed %}
+                                    No está autorizado para acceder a esta página <br>
+                                    ¿Desea iniciar sesión en una cuenta diferente?
+                                    {% endblocktrans %}
+                                </p>
+                                {% endif %}
+
+                            </div>
+
+
 
                             <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div>  -->
-                            <form action="{% url 'login' %}" method="POST">
-                                    {% csrf_token %}
-                               
-                                <div class="form-group">
-                                    <label for="exampleusername1">Nombre de usuario</label>
-                                    <input type="text" class="form-control form-control-sm" name="username">
+                            <form action="{% url 'login' %}" method="POST" id="login-form">
+                                {% csrf_token %}
+
+                                <!-- <div class="form-row">
+                                    {{ form.username.errors }}
+                                    {{ form.username.label_tag }} {{ form.username }}
+                                </div> -->
+
+                                <div class="form-group ">
+
+                                    {{ form.username.errors }}
+                                    {{ form.username.label_tag }} <br>
+                                    {{ form.username }}
+
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Contraseña</label>
-                                    <input type="password" class="form-control form-control-sm"
-                                        id="exampleInputPassword1" name="password">
-                                    <a id="log" href="#" style="float:right;font-size:15px; ">Olvidaste tu contraseña?</a>
+                                <div class="form-group col-12">
+
+                                    {{ form.password.errors }}
+                                    {{ form.password.label_tag }}
+                                    <br> {{ form.password }}
+                                    <input type="hidden" name="next" value="{{ next }}">
+                                    <br>
+
+                                    <a id="log" href="#" style="font-size:15px; ">¡Olvidaste tu
+                                        contraseña?</a>
                                 </div>
-                                <br>
-                                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+
+                                <button type="submit" class="btn btn-primary ">Entrar</button>
 
                                 <div class="sign-up">
-                                    ¿No tienes una cuenta? <a id="log" href="#" >Registrate!</a>
+                                    ¿No tienes una cuenta? <a id="log" href="#">Registrate!</a>
                                 </div>
                             </form>
                         </div>
@@ -64,5 +98,7 @@
 </body>
 
 </html>
+
+{% endblock  %}
 
 {% endblock contenido %}
