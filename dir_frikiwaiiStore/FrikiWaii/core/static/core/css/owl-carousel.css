@@ -6,12 +6,12 @@
 }
 .owl-prev{
     position: absolute;
-    top: 30%;
+    top: 20%;
 }
 
 .owl-next{
     position: absolute;
-    top: 30%;
+    top: 20%;
 }
 
 .owl-prev span, .owl-next span{
@@ -28,7 +28,7 @@
 
 
 .owl-theme .owl-nav [class*="owl-"]:hover {
-    background-color:  #3f3d3d77;
+    background-color:  #f8aeae85;
     
 }
 
