@@ -11,6 +11,13 @@
     /* background:rgb(200, 158, 235); */
 }
 
+/* TABLA */
+.table-hover tbody tr:hover > th{
+  background-color: #dd568e;
+}
+.table-hover tbody tr:hover{
+  background-color: #ffdfec;
+}
 #btn-lis{
   font-size: 12px;
 }
