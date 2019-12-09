@@ -11,6 +11,10 @@
     /* background:rgb(200, 158, 235); */
 }
 
+#btn-lis{
+  font-size: 12px;
+}
+
 .bg-rosa{
   color: rgb(105, 207, 238);
 }

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,9 @@ STATIC_URL = '/static/'
 # especifica la ruta donde se cargará el archivo 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')  
+
+
+
+
