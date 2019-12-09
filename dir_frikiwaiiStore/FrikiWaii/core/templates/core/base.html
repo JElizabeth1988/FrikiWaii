@@ -73,19 +73,28 @@
                     <div class="free-shipping-wrapper">
                         <div class="free-shipping">
                             <!-- poner referencia una vez q se cree la página -->
-                            <a>Envíos gratis a CL! <img src="{% static 'core/img/Banderas/cl.png' %}"
+                            <a>Envíos gratis CL! <img src="{% static 'core/img/Banderas/cl.png' %}"
                                     alt="Bandera CL"></a>
-                            <a href="" style="color: rgba(255, 255, 255, 0);"> ss</a>
+                            <a href="" style="color: rgba(255, 255, 255, 0);">s</a>
 
                             <!-- <a href="#"></a> |USD |</a> -->
                             <!-- {% if user.is_authenticated %} -->
                              <!-- usuario logueado -->
 
-                            <a href="" style="text-align: right;">Bienvenido:{{ user.username.title }}</a>
+                            <a href="" style="text-align: right;">Bienvenido:{{ user.username.title }}
+                                {% if user.is_staff %}
+                                    &#x1f920;
+                               
+                                {% else %}
+                                    &#x1f600;
+
+                                {% endif %}
+                            
+                             </a>
                                 
                             <a href="{% url 'registro' %}"> | Registro |</a>
 
-                            <a href="{% url 'listado' %}"> Listado |</a>
+                            <a href="{% url 'listado' %}"> Listado|</a>
 
                            
 
