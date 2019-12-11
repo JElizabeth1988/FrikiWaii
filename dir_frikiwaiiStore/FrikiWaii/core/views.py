@@ -214,6 +214,12 @@ def modificar(request,id):
     data = {
         'form': ProductoForm(instance=producto)
     }
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, instance=producto)
+        if formulario.is_valid():
+            formulario.save()
+
+            data['mensaje']= "Modificado Correctamente"
     return render(request, 'core/modificar.html', data)
 
 # ----------------------------------------------------------
