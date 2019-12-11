@@ -74,7 +74,7 @@ def registro(request):
             dispositivo = FCMDevice.objects.filter(active=True)
             dispositivo.send_message(
                 title= "Producto Agregado!",
-                body="Se ha Agregado: " + Producto.cleaned_data['nombre'],
+                body="Se ha Agregado: " + producto.cleaned_data['nombre'],
                 icon="static/core/img/doni.png"          
             )
             # -------------------------------------------
