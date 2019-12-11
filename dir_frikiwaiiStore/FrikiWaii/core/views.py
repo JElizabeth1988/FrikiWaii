@@ -220,6 +220,8 @@ def modificar(request,id):
             formulario.save()
 
             data['mensaje']= "Modificado Correctamente"
+            data['form']= formulario
+            
     return render(request, 'core/modificar.html', data)
 
 # ----------------------------------------------------------
