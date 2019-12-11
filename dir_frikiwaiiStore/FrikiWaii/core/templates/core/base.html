@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>FrikiWaii </title>
 
     {% comment %} SERVICE WORKER {% endcomment %}
-    {% load pwa %} 
+    {% load pwa %}
     {% progressive_web_app_meta %}
     {% comment %} SERVICE WORKER {% endcomment %}
 
@@ -50,6 +51,93 @@
     <meta name="theme-color" content="#ffffff">
 
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC_fx_PRteCj_4uWRR3iAgUVNSr3RsNGXo",
+            authDomain: "frikiwaii.firebaseapp.com",
+            databaseURL: "https://frikiwaii.firebaseio.com",
+            projectId: "frikiwaii",
+            storageBucket: "frikiwaii.appspot.com",
+            messagingSenderId: "440249691222",
+            appId: "1:440249691222:web:8a4ae8305dd95811fb1ff7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        let messaging = firebase.messaging();
+
+        //Primero enlazamos el serviceworker
+        navigator.serviceWorker
+        .register('./serviceworker.js')
+        .then(function(register) {
+            
+            messaging.useServiceWorker(register);
+
+            //Solicitamos el permiso para recibir notificaciones al usuario
+            messaging.requestPermission()
+                .then(function(){
+                    console.log("El usuario ha aceptado recibir notificaciones")
+
+                    //recibimos explicitamente el token
+                    return messaging.getToken();
+                })
+                .then(function(token){
+                    console.log(token);
+
+                    //Enviar Token hacía Django para guardarlo en la BD
+
+                    fetch('guardar-token/',{
+                        method:'post',
+                        headers:{
+                            'Content-Type':'application/json',
+                            'Accept':'application/json'
+                        },
+                        body:JSON.stringify({
+                            'token':token
+                        })
+                    })
+                    .then(function(resultado){
+                        console.log("Se ha guardado el Token")
+                    })
+                    .catch(function(e){
+                        console.log("Error al guardar el Token")
+                    })
+                })
+                .catch(function(e){
+                    console.log("El usuario no ha aceptado recibir notificaciones")
+
+                })
+        })
+
+        //Programar la recepción de las notificaciones
+        //Let es como var
+        messaging.onMessage(function(payload){
+            console.log("Usted ha recibido una Notificación")
+
+            let data = payload;
+            console.log(data);
+            
+            let title = payload.notification.title;
+
+            let options = {
+                body: payload.notification.body,
+                icon: payload.notification.icon
+            }
+
+            let mensaje = new Notification(title, options);
+
+        });
+
+    </script>
 
 </head>
 <!-- Estilo para el header (donde se encuentra el logo) -->
@@ -79,24 +167,24 @@
 
                             <!-- <a href="#"></a> |USD |</a> -->
                             <!-- {% if user.is_authenticated %} -->
-                             <!-- usuario logueado -->
+                            <!-- usuario logueado -->
 
                             <a href="" style="text-align: right;">Bienvenido:{{ user.username.title }}
                                 {% if user.is_staff %}
-                                    &#x1f920;
-                               
+                                &#x1f920;
+
                                 {% else %}
-                                    &#x1f600;
+                                &#x1f600;
 
                                 {% endif %}
-                            
-                             </a>
-                                
+
+                            </a>
+
                             <a href="{% url 'registro' %}"> | Registro |</a>
 
                             <a href="{% url 'listado' %}"> Listado|</a>
 
-                           
+
 
                             <!-- cerrar sesión -->
 
@@ -183,20 +271,20 @@
                 <ul class="nav navbar-nav ">
                     {% if user.is_authenticated %}
 
-                        <li class="nav-item">
-                            <a href="{% url 'logout' %}"><span class=" nav-link fas fa-sign-out-alt"></span> Cerrar
-                                Sesión</a>
-                        </li>
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}"><span class=" nav-link fas fa-sign-out-alt"></span> Cerrar
+                            Sesión</a>
+                    </li>
 
                     {% else %}
-                        <li class="nav-item">
-                            <a href="{% url 'login' %}"><span class=" nav-link fas fa-sign-in-alt"></span> Iniciar
-                                Sesión</a>
-                        </li>
-                       
-                        <li>
-                            <a href="#"><span class=" nav-link "></span></a>
-                        </li>
+                    <li class="nav-item">
+                        <a href="{% url 'login' %}"><span class=" nav-link fas fa-sign-in-alt"></span> Iniciar
+                            Sesión</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><span class=" nav-link "></span></a>
+                    </li>
                     {% endif %}
 
                     <!-- <li class="nav-item">

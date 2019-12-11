@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, registro,modificar,eliminar,listado, alien, audifonos,listadoGamerStyle,listadoPhoneCase,listadoAccesorios,listadoPapeliria,listadoOutfits,listadoBags, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera
+from .views import home, registro,modificar,eliminar,listado, alien, audifonos,listadoGamerStyle,listadoPhoneCase,listadoAccesorios,listadoPapeliria,listadoOutfits,listadoBags, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera, guardar_token
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -32,6 +32,7 @@ urlpatterns = [
     path('pokemochila/', pokemochila, name="pokemochila"),
     path('sacapuntas/', sacapuntas, name="sacapuntas"),
     path('sudadera-avengers/', sudadera, name="sudadera"), 
+    path('guardar-token/',guardar_token, name='guardar_token'),
     
 ]
 

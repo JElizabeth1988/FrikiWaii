@@ -3,8 +3,56 @@ from .models import Producto, Categoria
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
 
+#rest_framework
+# from rest_framework import viewsets
+# from .serializers import FrikiwaiiSerializer
+
+#import para notificaciones push
+from django.views.decorators.http import require_http_methods
+# csrf_exempt: para enviar el token
+from django.views.decorators.csrf import csrf_exempt
+
+# HttpResponse: devuelvo un json | HttpResponseBadRequest: devuelvo un error en el json
+from django.http import HttpResponse, HttpResponseBadRequest
+
+from django.core import serializers
+import json
+
+# FCMDevice: modelo dentro del pqte que representa un dispositivo
+from fcm_django.models import FCMDevice
+#import para notificaciones push
 
 # Create your views here.
+@csrf_exempt
+@require_http_methods(['POST'])
+def guardar_token(request):
+    # {token:132213ghgfghf13ghf}
+    body = request.body.decode('utf-8')
+    bodyDict = json.loads(body)
+
+    token = bodyDict['token']
+
+    existe = FCMDevice.objects.filter(registration_id = token, active= True)
+
+    if len(existe) > 0:
+        #dumps transforma el diccionario a un json (lo contrario de loads)
+        return HttpResponseBadRequest(json.dumps({'mensaje':'el token ya existe'}))
+
+    dispositivo = FCMDevice()
+    dispositivo.registration_id = token
+    dispositivo.active = True
+
+    #Solo si el usuario esta autenticado procedemos a enlazar
+    if request.user.is_authenticated: 
+        dispositivo.user = request.user
+    
+    try:
+        dispositivo.save()
+        return HttpResponse(json.dumps({'mensaje':'el token guardado'}))
+    except:
+        return HttpResponseBadRequest(json.dumps({'mensaje':'Error al guardar el Token'}))
+
+
 def home(request):
     return render(request, 'core/home.html')
 
@@ -31,6 +79,15 @@ def registro(request):
 
         try:
             producto.save()
+
+            #1° Obtenemos todos los dispositivos
+            dispositivos = FCMDevice.objects.filter(active=True)
+            dispositivos.send_message(
+                title= "Producto Agregado!",
+                body="Se ha Agregado: " + producto.cleaned_data['nombre'],
+                icon="static/core/img/doni.png"          
+            )
+
             mensaje = "Agregado"
             messages.success(request, mensaje)
         except:

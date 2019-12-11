@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'pwa',
+    'fcm_django'
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')  
 
+
+FCM_DJANGO_SETTINGS  = {
+         " APP_VERBOSE_NAME " : "frikiwaii" ,
+          # predeterminado: _ ('FCM Django') 
+        " FCM_SERVER_KEY " : "AIzaSyC_fx_PRteCj_4uWRR3iAgUVNSr3RsNGXo" ,
+          # verdadero si desea tener solo un dispositivo activo por usuario registrado a la vez 
+         # predeterminado: Falso 
+        " ONE_DEVICE_PER_USER " : False ,
+          # dispositivos a los que no se pueden enviar notificaciones, 
+         #se eliminan al recibir respuesta de error de FCM 
+         # predeterminado: Falso 
+        " DELETE_INACTIVE_DEVICES " : True ,
+}
 
 
 
