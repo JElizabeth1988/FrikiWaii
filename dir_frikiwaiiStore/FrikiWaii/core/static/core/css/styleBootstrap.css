@@ -485,7 +485,7 @@ div {
   }
 
 .navbar a{
-    color: white;
+    color: bisque;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
 }
@@ -503,19 +503,25 @@ div {
 
 /* link no visitado */
 a:link {
-    color: rgb(243, 241, 241);
+    color: rgb(0, 0, 0);
     text-decoration: none;
   }
+.nav-link:link{
+    color:rgb(250, 250, 250);
+    text-decoration: none;
+}
   
   /*link  visitado */
   a:visited {
     color: rgb(250, 250, 250);
     text-decoration: none;
   }
-  
+  .nav-link:hover{
+    color: rgb(102, 52, 160);
+  }
   /* al pasar el mouse */
   a:hover {
-    color: rgb(67, 24, 116);
+    color: rgb(160, 52, 145);
     
   }
 
@@ -526,7 +532,7 @@ a:link {
   }
 
   #log:hover {
-    color: rgb(182, 32, 144);
+    color: rgb(102, 52, 160);
   }
 /* Para enlaces a:link en login */
   

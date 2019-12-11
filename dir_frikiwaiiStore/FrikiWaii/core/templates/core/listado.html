@@ -24,16 +24,20 @@
             <td>{{ x.descripcion }}</td>
             <td>{{ x.precio }}</td>
             <td>
-            {% if x.imagen %}
+                {% if x.imagen %}
 
-            <img src="{{x.imagen.url}}" alt="img" width="100" height="100">
+                <img src="{{x.imagen.url}}" alt="img" width="100" height="100">
 
-            {% endif %}
+                {% endif %}
             </td> 
 
             {% if user.is_staff %}
-            <td><a class="btn btn-dark" id="btn-lis" href="{% url 'modificar' x.id %}" style="font-size: 12px" >Modificar </a></td>
-            <td><a class="btn btn-dark" id="btn-lis" href="{% url 'eliminar' x.id %}" style="font-size: 12px" >Eliminar </a></td>
+            <td>
+                <a class="btn btn-dark" id="btn-lis" href="{% url 'modificar' x.id %}" style="font-size: 12px" >Modificar </a>
+            </td>
+            <td>
+                <a class="btn btn-dark" id="btn-lis" href="{% url 'eliminar' x.id %}" style="font-size: 12px" >Eliminar </a>
+            </td>
             {% endif %}
 
         </tr>

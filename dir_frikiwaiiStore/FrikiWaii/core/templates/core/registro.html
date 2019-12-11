@@ -1,6 +1,36 @@
 {% extends "core/base.html" %} {% load static %} {% block contenido %}
+<div class="container mt-4">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <div class="col-12">
+            <h4><b> Registro de Productos</b></h4>
+        </div>
+        <div class="row">
+            <div class="col">
 
-<div class="container">
+                <img src="{% static 'core/img/box.png' %}" alt="auto 1">
+            </div>
+        </div>
+        <br>
+        <table>
+
+            {{ form.as_table }}
+
+        </table>
+
+        <div class=" col-6 py-4 ">
+            <input type="reset" class="btn btn-dark col-3 mr-3" value="Limpiar">
+
+            <input type="submit" class="btn btn-dark col-3 mr-3" id="btnAgregar" name="btnAgregar" value="Agregar">
+        </div>
+
+
+    </form>
+
+</div>
+
+<!-- <div class="container">
 
     <div class="row">
         <div class="col">
@@ -9,7 +39,7 @@
             <img src="{% static 'core/img/box.png' %}" alt="auto 1">
         </div>
     </div>
-    <!-- formulario -->
+     formulario 
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row mt-4 ">
@@ -43,7 +73,7 @@
                 <input type="text" class="form-control" id="txtPrecio" name="txtPrecio" placeholder="Ingrese Precio">
             </div>
 
-            <!-- imagenes -->
+             imagenes 
             <div class="col-8 py-2">
                 <input type="file" name="txtImagen" id="txtImagen">
             </div>
@@ -57,5 +87,5 @@
     {% if messages %} {% for x in messages %}
     <div>{{x}}</div>
     {% endfor %} {% endif%}
-</div>
+</div> -->
 {% endblock contenido %}

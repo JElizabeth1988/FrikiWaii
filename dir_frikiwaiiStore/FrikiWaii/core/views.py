@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Producto, Categoria
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
+from .forms import ProductoForm
 
 #rest_framework
 # from rest_framework import viewsets
@@ -60,43 +61,71 @@ def home(request):
 #restringimos permisos
 @permission_required('core.add_producto')
 def registro(request):
-    lista = Categoria.objects.all()
     data = {
-        'categorias' : lista
+        'form':ProductoForm()
     }
 
-    if request.POST:
-        producto =  Producto()
-        producto.codigo = request.POST.get("txtCodigo")
-        producto.nombre = request.POST.get("txtNombre")
-        producto.descripcion = request.POST.get("txtDescripcion")
-        producto.precio = request.POST.get("txtPrecio")
-        producto.imagen = request.FILES.get("txtImagen")
-
-        categoria = Categoria()
-        categoria.id = request.POST.get("cboCategoria")
-        producto.categoria  = categoria
-
-        try:
-            producto.save()
-
+    if request.method == 'POST':
+        formulario = ProductoForm(request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+             # ---------------------------Notificaciones
             #1° Obtenemos todos los dispositivos
-            dispositivos = FCMDevice.objects.filter(active=True)
-            dispositivos.send_message(
+            dispositivo = FCMDevice.objects.filter(active=True)
+            dispositivo.send_message(
                 title= "Producto Agregado!",
-                body="Se ha Agregado: " + producto.cleaned_data['nombre'],
+                body="Se ha Agregado: " + Producto.cleaned_data['nombre'],
                 icon="static/core/img/doni.png"          
             )
-
-            mensaje = "Agregado"
-            messages.success(request, mensaje)
-        except:
-            mensaje  = "Error al agregar"
-            messages.error(request, mensaje)
-
-        return redirect('registro')
-
+            # -------------------------------------------
+            data['mensaje'] = "Guardado Correctamente"
+        data['form'] = formulario
+    
     return render(request, 'core/registro.html', data)
+
+
+
+
+# def registro1(request):
+#     lista = Categoria.objects.all()
+#     data = {
+#         'categorias' : lista
+#     }
+
+#     if request.POST:
+#         producto =  Producto()
+#         producto.codigo = request.POST.get("txtCodigo")
+#         producto.nombre = request.POST.get("txtNombre")
+#         producto.descripcion = request.POST.get("txtDescripcion")
+#         producto.precio = request.POST.get("txtPrecio")
+#         producto.imagen = request.FILES.get("txtImagen")
+
+#         categoria = Categoria()
+#         categoria.id = request.POST.get("cboCategoria")
+#         producto.categoria  = categoria
+
+#         try:
+#             producto.save()
+
+#             # ---------------------------Notificaciones
+#             #1° Obtenemos todos los dispositivos
+#             dispositivos = FCMDevice.objects.filter(active=True)
+#             dispositivos.send_message(
+#                 title= "Producto Agregado!",
+#                 body="Se ha Agregado: " + producto.cleaned_data['nombre'],
+#                 icon="static/core/img/doni.png"          
+#             )
+#             # -------------------------------------------
+
+#             mensaje = "Agregado"
+#             messages.success(request, mensaje)
+#         except:
+#             mensaje  = "Error al agregar"
+#             messages.error(request, mensaje)
+
+#         return redirect('registro')
+
+#     return render(request, 'core/registro.html', data)
 
 # ----------------------------------------------------------------------
 #restringimos el método que solo funcione si estoy autenticado (requiere login)
@@ -180,44 +209,49 @@ def eliminar(request, id):
 
     return redirect('listado')
 
-
+def modificar(request,id):
+    producto = Producto.objects.get(id=id)
+    data = {
+        'form': ProductoForm(instance=producto)
+    }
+    return render(request, 'core/modificar.html', data)
 
 # ----------------------------------------------------------
 
-def modificar(request, id):
-   # variables que enviaremos a la vista
-    producto = Producto.objects.get(id=id)
-    categorias = Categoria.objects.all()
-    variables = {
-        'producto'   : producto,
-        'categorias' : categorias
-    }
+# def modificar(request, id):
+#    # variables que enviaremos a la vista
+#     producto = Producto.objects.get(id=id)
+#     categorias = Categoria.objects.all()
+#     variables = {
+#         'producto'   : producto,
+#         'categorias' : categorias
+#     }
 
-    if request.POST:
-        producto = Producto()
-        # se agrega el id para poder modificarlo
-        producto.id = request.POST.get('txtId')
-        producto.codigo = request.POST.get('txtCodigo')
-        producto.nombre = request.POST.get('txtNombre')
-        producto.descripcion = request.POST.get('txtDescripcion')
-        producto.precio = request.POST.get('txtPrecio')
-        producto.imagen = request.FILES.get("txtImagen")
+#     if request.POST:
+#         producto = Producto()
+#         # se agrega el id para poder modificarlo
+#         producto.id = request.POST.get('txtId')
+#         producto.codigo = request.POST.get('txtCodigo')
+#         producto.nombre = request.POST.get('txtNombre')
+#         producto.descripcion = request.POST.get('txtDescripcion')
+#         producto.precio = request.POST.get('txtPrecio')
+#         producto.imagen = request.FILES.get("txtImagen")
 
 
-        categoria  = Categoria()
-        categoria.id = request.POST.get('cboCategoria')
-        producto.categoria = categoria
-        try:
-            producto.save()
-            mensaje = "Modificado correctamente"
-            messages.success(request, mensaje)
-        except:
-            mensaje = "Error al modificar"
-            messages.error(request, mensaje)
+#         categoria  = Categoria()
+#         categoria.id = request.POST.get('cboCategoria')
+#         producto.categoria = categoria
+#         try:
+#             producto.save()
+#             mensaje = "Modificado correctamente"
+#             messages.success(request, mensaje)
+#         except:
+#             mensaje = "Error al modificar"
+#             messages.error(request, mensaje)
 
-        return redirect('listado')
+#         return redirect('listado')
         
-    return render(request, 'core/modificar.html', variables)
+#     return render(request, 'core/modificar.html', variables)
 
 # -----------------------------------------------------------
 
