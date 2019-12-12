@@ -11,14 +11,9 @@
     /* background:rgb(200, 158, 235); */
 }
 
-/* TABLA */
-/* .table-hover tbody tr:hover > th{
-  background-color:  rgb(255, 130, 193);
-} */
-.table-hover tbody tr:hover{
-  background-color: #ffdfec;
+.panel-info{
+border-color: #bce8f1;
 }
-/*FIN  TABLA */
 
 
 .bg-rosa{

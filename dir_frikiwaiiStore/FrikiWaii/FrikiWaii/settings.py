@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'pwa',
-    'fcm_django'
+    'fcm_django',
 ]
 
 MIDDLEWARE = [
