@@ -8,7 +8,7 @@ from .forms import ProductoForm, ContactoForm
 from rest_framework import viewsets
 from .serializers import CategoriaSerializer, ProductoSerializer
 
-#import para notificaciones push
+#----------------------import para notificaciones push
 from django.views.decorators.http import require_http_methods
 # csrf_exempt: para enviar el token
 from django.views.decorators.csrf import csrf_exempt
@@ -21,7 +21,7 @@ import json
 
 # FCMDevice: modelo dentro del pqte que representa un dispositivo
 from fcm_django.models import FCMDevice
-#import para notificaciones push
+#-----------------------import para notificaciones push
 
 # Create your views here.
 @csrf_exempt

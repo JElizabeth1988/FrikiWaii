@@ -531,7 +531,7 @@ div {
 
 /* link no visitado */
 a:link {
-    color: rgb(255, 255, 255);
+    color: rgb(46, 44, 44);
     text-decoration: none;
   }
 .nav-link:link{
