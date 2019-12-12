@@ -1,0 +1,34 @@
+{% extends "core/base.html" %} {% load static %} {% block contenido %}
+
+<table>
+
+<tr>
+
+<th>nombre</th>
+<th>apellido</th>
+<th>asunto</th>
+<th>contacto</th>
+<th>mensaje</th>
+
+
+</tr>
+
+{% for x in contactos %}
+<tr>
+
+    <td>{{x.nombre}}</td>
+    <th>{{x.apellido}}</td>
+    <td>{{x.asunto}}</td>
+    <td>{{x.tipoContacto}}</td>
+    <td>{{x.mensaje}}</td>
+ 
+    
+    
+    </tr>
+
+{% endfor %}
+
+
+</table>
+
+{% endblock contenido %}

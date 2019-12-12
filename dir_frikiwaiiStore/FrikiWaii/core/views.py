@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import Producto, Categoria
+from .models import Producto, Categoria, Contacto, TipoContacto
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
-from .forms import ProductoForm
+from .forms import ProductoForm, ContactoForm
 
 #rest_framework
 # from rest_framework import viewsets
@@ -83,6 +83,7 @@ def registro(request):
     
     return render(request, 'core/registro.html', data)
 
+#--------------------------------------------------------------------------
 def modificar(request,id):
     producto = Producto.objects.get(id=id)
     data = {
@@ -153,6 +154,30 @@ def listado(request):
     }
 
     return render(request, 'core/listado.html', data)
+
+#Registrar CONTACTO-------------------------------------------------------
+def nuevo_contacto(request):
+        data = {
+             'form':ContactoForm()
+        }
+
+        if request.method == 'POST':
+           formulario = ContactoForm(request.POST)
+           if formulario.is_valid():
+               formulario.save()
+               data['mensaje'] = "Guardado Correctamente"
+    
+        return render(request, 'core/nuevo_contacto.html', data)
+
+#Listar CONTACTO--------------------------------------------------------- 
+def listado_contacto(request):
+    contactos = Contacto.objects.all()
+    data = {
+        'contactos':contactos
+    }
+    return render(request, 'core/listado_contacto.html', data)
+
+
 # ----------------LISTA DE LOS PRODUCTOS CON REDIRECCION A LA PÁGINA.html--------------
 def listadoOutfits(request):
     lista = Producto.objects.all()

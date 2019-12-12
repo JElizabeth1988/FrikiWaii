@@ -19,4 +19,20 @@ class Producto(models.Model):
     def __str__(self):
         return self.nombre
 
+class TipoContacto(models.Model):
+    nombre = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.nombre
+
+
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    asunto = models.CharField(max_length=50)
+    tipoContacto = models.ForeignKey(TipoContacto, on_delete= models.CASCADE)
+    mensaje = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.nombre
     
