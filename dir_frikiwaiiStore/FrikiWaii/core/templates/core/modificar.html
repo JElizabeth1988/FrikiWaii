@@ -29,6 +29,12 @@
 
 </div>
 
+{{ mensaje }}
+
+{% if messages %} {% for x in messages %}
+<div>{{x}}</div>
+{% endfor %} {% endif%}
+
 <!-- <div class="container">
 
     <div class="row">

@@ -71,17 +71,32 @@ def registro(request):
             formulario.save()
              # ---------------------------Notificaciones
             #1° Obtenemos todos los dispositivos
-            dispositivo = FCMDevice.objects.filter(active=True)
-            dispositivo.send_message(
-                title= "Producto Agregado!",
-                body="Se ha Agregado: " + producto.cleaned_data['nombre'],
-                icon="static/core/img/doni.png"          
-            )
+            # dispositivo = FCMDevice.objects.filter(active=True)
+            # dispositivo.send_message(
+            #     title= "Producto Agregado!",
+            #     body="Se ha Agregado: " + producto.cleaned_data['nombre'],
+            #     icon="static/core/img/doni.png"          
+            # )
             # -------------------------------------------
             data['mensaje'] = "Guardado Correctamente"
         data['form'] = formulario
     
     return render(request, 'core/registro.html', data)
+
+def modificar(request,id):
+    producto = Producto.objects.get(id=id)
+    data = {
+        'form': ProductoForm(instance=producto)
+    }
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, instance=producto, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+
+            data['mensaje']= "Modificado Correctamente"
+        data['form']= formulario
+            
+    return render(request, 'core/modificar.html', data)
 
 
 
@@ -209,20 +224,7 @@ def eliminar(request, id):
 
     return redirect('listado')
 
-def modificar(request,id):
-    producto = Producto.objects.get(id=id)
-    data = {
-        'form': ProductoForm(instance=producto)
-    }
-    if request.method == 'POST':
-        formulario = ProductoForm(data=request.POST, instance=producto)
-        if formulario.is_valid():
-            formulario.save()
 
-            data['mensaje']= "Modificado Correctamente"
-            data['form']= formulario
-            
-    return render(request, 'core/modificar.html', data)
 
 # ----------------------------------------------------------
 

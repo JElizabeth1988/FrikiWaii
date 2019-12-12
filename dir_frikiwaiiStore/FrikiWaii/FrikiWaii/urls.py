@@ -31,3 +31,5 @@ admin.site.site_header = " Panel de Administración FrikiWaii "
 # Titulo pestaña
 admin.site.site_title = " Frikiwaii "
 admin.site.index_title = " Mantención de Datos "
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
