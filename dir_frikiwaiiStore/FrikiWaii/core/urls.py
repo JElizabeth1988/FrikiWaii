@@ -1,7 +1,16 @@
-from django.urls import path
-from .views import home, registro,modificar,eliminar,listado,nuevo_contacto,listado_contacto, alien, audifonos,listadoGamerStyle,listadoPhoneCase,listadoAccesorios,listadoPapeliria,listadoOutfits,listadoBags, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera, guardar_token
+from django.urls import path, include
+from .views import home, registro,modificar,eliminar,listado,nuevo_contacto,listado_contacto, alien, audifonos,listadoGamerStyle,listadoPhoneCase,listadoAccesorios,listadoPapeliria,listadoOutfits,listadoBags, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera, guardar_token, CategoriaViewset, ProductoViewset
 from django.conf import settings
 from django.conf.urls.static import static
+
+#----------------------------------API---------------------------------
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('Categoria', CategoriaViewset)
+router.register('Producto', ProductoViewset)
+
+#-----------------------------------------------------------------------
 
 urlpatterns = [
     path('', home, name="home"),
@@ -35,7 +44,11 @@ urlpatterns = [
     path('sacapuntas/', sacapuntas, name="sacapuntas"),
     path('sudadera-avengers/', sudadera, name="sudadera"), 
     path('guardar-token/',guardar_token, name='guardar_token'),
-    
+
+ #----------------------------------API---------------------------------
+    path('api/', include(router.urls)),
+#----------------------------------------------------------------------- 
+
 ]
 
 # carga de archivos

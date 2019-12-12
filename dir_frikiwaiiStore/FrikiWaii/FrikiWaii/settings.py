@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'pwa',
     'fcm_django',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -4,9 +4,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
 from .forms import ProductoForm, ContactoForm
 
-#rest_framework
-# from rest_framework import viewsets
-# from .serializers import FrikiwaiiSerializer
+#------------------------------rest_framework------------------------------
+from rest_framework import viewsets
+from .serializers import CategoriaSerializer, ProductoSerializer
 
 #import para notificaciones push
 from django.views.decorators.http import require_http_methods
@@ -359,4 +359,14 @@ def sacapuntas(request):
 def sudadera(request):
     return render(request, 'core/sudadera-av.html')
 
+#------------------------------VIEWSET------------------------------
 
+class CategoriaViewset(viewsets.ModelViewSet):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+
+class ProductoViewset(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+
+#---------------------------------------------------------------------
