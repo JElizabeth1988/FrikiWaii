@@ -94,7 +94,7 @@ def modificar(request,id):
             formulario.save()
 
             data['mensaje']= "Modificado Correctamente"
-        data['form']= formulario
+        data['form']= ProductoForm(instance=Producto.objects.get(id=id))
             
     return render(request, 'core/modificar.html', data)
 
