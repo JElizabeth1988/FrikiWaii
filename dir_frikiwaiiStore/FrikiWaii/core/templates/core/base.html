@@ -171,10 +171,12 @@
 
                             <a href="" style="text-align: right;">Bienvenido:{{ user.username.title }}
                                 {% if user.is_staff %}
-                                &#x1f920;
+                                
+                                <span class="icon-user-circle-o" style="font-size: 16px;"></span>
+                                
 
                                 {% else %}
-                                &#x1f600;
+                                <span class="icon-user-circle-o" style="font-size: 16px;"></span>
 
                                 {% endif %}
 
