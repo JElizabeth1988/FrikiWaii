@@ -11,9 +11,40 @@
     /* background:rgb(200, 158, 235); */
 }
 
-.panel-info{
-border-color: #bce8f1;
+/* FORMULARIO CONTACTO */
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
 }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+user agent stylesheet
+div {
+  display: block;
+}
+.panel-info>.panel-heading {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.panel-body {
+  padding: 15px;
+  border-color: #bce8f1;
+}
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
 
 
 .bg-rosa{
@@ -496,9 +527,11 @@ div {
     margin-top: 10px;
 }
 
+
+
 /* link no visitado */
 a:link {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
   }
 .nav-link:link{
@@ -605,12 +638,17 @@ ul {
 
 
   
-  .btn.btn-sm {
-      padding: .5rem 1.6rem;
-      font-size: .64rem;
-      background-color: #7971ea;
+  .btn-sm {
+      font-size: .90rem;
+      background-color:#bce8f1;
+      border-color: #bce8f100;
   
   }
+
+  .btn-sm:hover{
+    background-color: #31708f;
+  }
+
   [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
       cursor: pointer;
   }
