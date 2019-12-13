@@ -138,9 +138,9 @@ PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')
 
 
 FCM_DJANGO_SETTINGS  = {
-         " APP_VERBOSE_NAME " : "frikiwaii" ,
+        " APP_VERBOSE_NAME " : "frikiwaii" ,
           # predeterminado: _ ('FCM Django') 
-        " FCM_SERVER_KEY " : "AIzaSyC_fx_PRteCj_4uWRR3iAgUVNSr3RsNGXo" ,
+        " FCM_SERVER_KEY " : "AIzaSyAaMtLcRqXU80pWdGLvh_1l43HIJ2Bn7ls" ,
           # verdadero si desea tener solo un dispositivo activo por usuario registrado a la vez 
          # predeterminado: Falso 
         " ONE_DEVICE_PER_USER " : False ,

@@ -49,7 +49,7 @@ def guardar_token(request):
     
     try:
         dispositivo.save()
-        return HttpResponse(json.dumps({'mensaje':'el token guardado'}))
+        return HttpResponse(json.dumps({'mensaje':'el token se ha guardado'}))
     except:
         return HttpResponseBadRequest(json.dumps({'mensaje':'Error al guardar el Token'}))
 
@@ -71,12 +71,12 @@ def registro(request):
             formulario.save()
              # ---------------------------Notificaciones
             #1° Obtenemos todos los dispositivos
-            # dispositivo = FCMDevice.objects.filter(active=True)
-            # dispositivo.send_message(
-            #     title= "Producto Agregado!",
-            #     body="Se ha Agregado: " + producto.cleaned_data['nombre'],
-            #     icon="static/core/img/doni.png"          
-            # )
+            dispositivo = FCMDevice.objects.filter(active=True)
+            dispositivo.send_message(
+                title= "¡Nuevo Producto!",
+                body="Se ha Agregado: " + formulario.cleaned_data['nombre'],
+                icon="/static/core/img/doni.png"          
+            )
             # -------------------------------------------
             data['mensaje'] = "Guardado Correctamente"
         data['form'] = formulario
