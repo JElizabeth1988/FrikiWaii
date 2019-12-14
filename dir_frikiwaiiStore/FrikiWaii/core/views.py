@@ -6,7 +6,7 @@ from .forms import ProductoForm, ContactoForm
 
 #------------------------------rest_framework------------------------------
 from rest_framework import viewsets
-from .serializers import CategoriaSerializer, ProductoSerializer
+from .serializers import CategoriaSerializer, ProductoSerializer, ContactoSerializer
 
 #----------------------import para notificaciones push
 from django.views.decorators.http import require_http_methods
@@ -368,5 +368,9 @@ class CategoriaViewset(viewsets.ModelViewSet):
 class ProductoViewset(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
-
+ 
 #---------------------------------------------------------------------
+
+class ContactoViewset(viewsets.ModelViewSet):
+    queryset = Contacto.objects.all()
+    serializer_class = ContactoSerializer

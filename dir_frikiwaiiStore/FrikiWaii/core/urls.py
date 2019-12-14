@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import home, registro,modificar,eliminar,listado,nuevo_contacto,listado_contacto, alien, audifonos,listadoGamerStyle,listadoPhoneCase,listadoAccesorios,listadoPapeliria,listadoOutfits,listadoBags, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera, guardar_token, CategoriaViewset, ProductoViewset
+from .views import home, registro,modificar,eliminar,listado,nuevo_contacto,listado_contacto, alien, audifonos,listadoGamerStyle,listadoPhoneCase,listadoAccesorios,listadoPapeliria,listadoOutfits,listadoBags, bunny, car_avengers, car_naruto, carro, crybaby, desc_accesorios, desc_bags, desc_gamerstyle, desc_outfits,desc_papeleria, desc_phonecase, inosuke, joker, llavero, memo, momo, muerto,penny, pokemochila, sacapuntas, sudadera, guardar_token, CategoriaViewset, ProductoViewset, ContactoViewset
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -9,6 +9,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register('Categoria', CategoriaViewset)
 router.register('Producto', ProductoViewset)
+router.register('Contacto', ContactoViewset)
 
 #-----------------------------------------------------------------------
 
