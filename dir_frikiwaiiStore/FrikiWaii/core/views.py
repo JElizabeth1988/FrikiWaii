@@ -69,15 +69,19 @@ def registro(request):
         formulario = ProductoForm(request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-             # ---------------------------Notificaciones
-            #1° Obtenemos todos los dispositivos
-            dispositivo = FCMDevice.objects.filter(active=True)
-            dispositivo.send_message(
-                title= "¡Nuevo Producto!",
-                body="Se ha Agregado: " + formulario.cleaned_data['nombre'],
-                icon="/static/core/img/doni.png"          
-            )
-            # -------------------------------------------
+            try:
+                # ---------------------------Notificaciones
+                #1° Obtenemos todos los dispositivos
+                dispositivo = FCMDevice.objects.filter(active=True)
+                dispositivo.send_message(
+                    title= "¡Nuevo Producto!",
+                    body="Se ha Agregado: " + formulario.cleaned_data['nombre'],
+                    icon="/static/core/img/doni.png"          
+                )
+                # -------------------------------------------
+            except:
+                mensaje = "Error notificación"
+                messages.success(request, mensaje)
             data['mensaje'] = "Guardado Correctamente"
         data['form'] = formulario
     

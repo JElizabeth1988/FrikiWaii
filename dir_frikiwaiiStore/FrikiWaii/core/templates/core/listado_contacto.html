@@ -1,34 +1,37 @@
 {% extends "core/base.html" %} {% load static %} {% block contenido %}
 
-<table>
+<div class="table">
+    <table class="table-responsive table-hover" id="tablita">
+        <thead class="thead-light">
 
-<tr>
+            <tr>
 
-<th>nombre</th>
-<th>apellido</th>
-<th>asunto</th>
-<th>contacto</th>
-<th>mensaje</th>
-
-
-</tr>
-
-{% for x in contactos %}
-<tr>
-
-    <td>{{x.nombre}}</td>
-    <th>{{x.apellido}}</td>
-    <td>{{x.asunto}}</td>
-    <td>{{x.tipoContacto}}</td>
-    <td>{{x.mensaje}}</td>
- 
-    
-    
-    </tr>
-
-{% endfor %}
+                <th scope="col">nombre</th>
+                <th scope="col">apellido</th>
+                <th scope="col">asunto</th>
+                <th scope="col">contacto</th>
+                <th scope="col">mensaje</th>
 
 
-</table>
+            </tr>
+        </thead>
+        <tbody>
+            {% for x in contactos %}
+            <tr>
 
+                <td>{{x.nombre}}</td>
+                <th>{{x.apellido}}</td>
+                <td>{{x.asunto}}</td>
+                <td>{{x.tipoContacto}}</td>
+                <td>{{x.mensaje}}</td>
+
+
+
+            </tr>
+
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
 {% endblock contenido %}
