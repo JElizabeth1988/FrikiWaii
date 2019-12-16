@@ -45,6 +45,7 @@ urlpatterns = [
     path('sacapuntas/', sacapuntas, name="sacapuntas"),
     path('sudadera-avengers/', sudadera, name="sudadera"), 
     path('guardar-token/',guardar_token, name='guardar_token'),
+    path('oauth/', include('social_django.urls', namespace='social')),
 
  #----------------------------------API---------------------------------
     path('api/', include(router.urls)),
